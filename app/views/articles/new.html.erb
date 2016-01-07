@@ -12,7 +12,7 @@
 <%=f.text_field :image_url %>  
 	<% @topic.each do |z| %>
 	<br>
-	<%=check_box_tag z.category, 'yes', false%><%=z.category%>
+	<%=f.check_box :topics, z.category, 'yes', false%><%=z.category%>
 	<%end%>
 <%=f.submit :create %> 
 <% end %>

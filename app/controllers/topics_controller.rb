@@ -26,7 +26,6 @@ class TopicsController < ApplicationController
   end
 
   def show
-    # @topic = Topic.find(params[:category])
     @topic = Topic.where(:category => :category)
   end
 
