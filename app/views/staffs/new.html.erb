@@ -1,2 +1,17 @@
 <h1>Staffs#new</h1>
 <p>Find me in app/views/staffs/new.html.erb</p>
+
+<!-- This is a form used to create a new member of the staff. -->
+<%= form_for @staff do |f| %>   
+<%=f.label :First_Name %>   
+<%=f.text_field :fname %> 
+<%=f.label :Last_name %>   
+<%=f.text_field :lname %>  
+<%=f.label :email %>   
+<%=f.text_field :email %>  
+<%=f.label :password %>   
+<%=f.text_field :password %>  
+<%=f.label :Job_title %>   
+<%=f.text_field :job_title %>     
+<%=f.submit :create %> 
+<% end %>

@@ -22,5 +22,8 @@ module News
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # commented out line of code because I am now using params.require in the controller for added security via strong params.
+    # config.action_controller.permit_all_parameters = true
   end
 end
