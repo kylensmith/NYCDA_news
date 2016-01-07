@@ -1,0 +1,12 @@
+<h1>Articles#create</h1>
+<p>Find me in app/views/articles/create.html.erb</p>
+
+
+<%= form_for @articles do |f| %> 
+<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
+<% @topic.each do |z| %>
+<br>
+<%=check_box_tag z.category, 'yes', false%><%=z.category%>
+<%=f.submit :create %> 
+<% end %>
+	<!-- Note: this feature is NOT WORKING and needs to be fixed so that it populates the data correctly in the join table.  -->
