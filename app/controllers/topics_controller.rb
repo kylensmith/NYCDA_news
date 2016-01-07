@@ -27,7 +27,7 @@ class TopicsController < ApplicationController
 
   def show
     # @topic = Topic.find(params[:category])
-    @topic = Topic.where(:category => params[:category])
+    @topic = Topic.where(:category => :category)
   end
 
   def destroy
