@@ -1,2 +1,19 @@
 <h1>Staffs#edit</h1>
 <p>Find me in app/views/staffs/edit.html.erb</p>
+
+Hint: form_for @user, html: {method: :put}
+
+
+<%= form_for @staff, html: {method: :put} do |f| %>   
+<%=f.label :First_Name %>   
+<%=f.text_field :fname %> 
+<%=f.label :Last_name %>   
+<%=f.text_field :lname %>  
+<%=f.label :email %>   
+<%=f.text_field :email %>  
+<%=f.label :password %>   
+<%=f.text_field :password %>  
+<%=f.label :Job_title %>   
+<%=f.text_field :job_title %>     
+<%=f.submit :create %> 
+<% end %>

@@ -1,7 +1,10 @@
 <h1>Staffs#index</h1>
 <p>Find me in app/views/staffs/index.html.erb</p>
 
+<!-- This loop will list all of the current members of the department staffs -->
+
 List of current staff.
-<% @staff.each do |x| %>
-<%= x.fname%> <%= x.lname%>, <%= x.email%>
+<% @staff.each do |x| %><br>
+<%= x.job_title%><%= x.fname%> <%= x.lname%>, <%= x.email%>   <%= link_to "delete", staff_path(x.id), method: :delete%>
+<br>
 <%end%>
