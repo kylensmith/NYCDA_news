@@ -11,6 +11,9 @@
 <nav>
 	<ul>
 		<li><%= link_to 'Home', root_path %></li>
+		<% @topic.each do |topic| %>
+   		<li><%= link_to (topic.category), (topic_path(topic.category)) %></li>
+		<% end %>
 	</ul>
 </nav>
 <%= yield %>

@@ -16,6 +16,7 @@ class TopicsController < ApplicationController
       flash[:alert] = "Error!"
       redirect_to topics_path_new
     end
+    render :new
   end
 
   def edit
@@ -25,7 +26,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:type])
+    # @topic = Topic.find(params[:category])
+    @topic = Topic.where(:category => params[:category])
   end
 
   def destroy
