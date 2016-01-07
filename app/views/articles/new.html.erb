@@ -1,2 +1,18 @@
 <h1>Articles#new</h1>
 <p>Find me in app/views/articles/new.html.erb</p>
+
+
+<!-- This is a form used to create a new article from a member of the staff. -->
+<%= form_for @articles do |f| %>   
+<%=f.label :title %>   
+<%=f.text_field :title %> 
+<%=f.label :body %>   
+<%=f.text_field :body %>  
+<%=f.label :image_url %>   
+<%=f.text_field :image_url %>  
+	<% @topic.each do |z| %>
+	<br>
+	<%=check_box_tag z.category, 'yes', false%><%=z.category%>
+	<%end%>
+<%=f.submit :create %> 
+<% end %>
