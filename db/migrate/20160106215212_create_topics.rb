@@ -1,7 +1,7 @@
 class CreateTopics < ActiveRecord::Migration
   def change
     create_table :topics do |t|
-      t.string :type
+      t.string :category
 
       t.timestamps null: false
     end
