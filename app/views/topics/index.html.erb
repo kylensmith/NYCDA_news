@@ -3,4 +3,5 @@
 
 <% @topic.each do |topic| %>
    <%= link_to (topic.category), (topic_path(topic.category)) %>
+   <%= image_tag("/assets/#{article.image_url}")%>
 <% end %>

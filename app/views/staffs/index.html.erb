@@ -8,3 +8,11 @@ List of current staff.
 <%= x.job_title%><%= x.fname%> <%= x.lname%>, <%= x.email%>   <%= link_to "delete", staff_path(x.id), method: :delete%>
 <br>
 <%end%>
+
+<%= form_tag "/staff-login", method: "post" do %>   
+<%=label_tag :email %>   
+<%=text_field_tag :email %> 
+<%=label_tag :password %>   
+<%=text_field_tag :password %>  
+<%=submit_tag "Login" %> 
+<% end %>
