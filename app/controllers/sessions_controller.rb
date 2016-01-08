@@ -21,28 +21,22 @@ class SessionsController < ApplicationController
 		end
 	end
 
-	# def create_subscriber
-
-
-	# 	@subscriber = Subscriber.find_by_email(params[:email]) 
-	# 	if @subscriber and @subscriber.password == params[:password]
-	# 		session[:subscriber_id] = @subscriber.id 
-	# 		redirect_to root_path
-	# 	else
-	# 		flash[:alert] = "There was a problem, please try again."
-	# 		render :new
-	# 	end
-	# end
-
-	# def destroy_staff
-	# 	session[:staff_id] = nil
-	# 	redirect_to root_path, notice "You have been logged out."
-	# end
+	
 
 	# def destroy_subscriber
 	# 	session[:subscriber_id] = nil
 	# 	redirect_to root_path, notice "You have been logged out."
 
 	# end
+
+	def destroy
+		session[:staff_id] = nil
+		session[:subscriber_id] = nil
+		redirect_to root_path
+		
+	end
+
+
+
 
 end
