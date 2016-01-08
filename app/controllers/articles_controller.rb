@@ -53,6 +53,6 @@ class ArticlesController < ApplicationController
 # this provdes additional security by only allowing the permitted variables to be accessed and changed.
 
   def article_params
-    params.require(:article).permit(:title, :body, :image_url)
+    params.require(:article).permit(:title, :body, :image_url, topics_attributes: [ :id, :category ])
   end
 end
