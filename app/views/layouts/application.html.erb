@@ -10,7 +10,10 @@
 
 <nav>
 	<ul>
-		<li><%= link_to 'Home', root_path %></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <% @topics.each do |topic| %>
+        <li><%= link_to (topic.category), (topic_path(topic.id)) %></li>
+        <% end %>
 	</ul>
 </nav>
 <%= yield %>

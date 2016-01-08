@@ -9,17 +9,19 @@ class ArticlesController < ApplicationController
     @topic = Topic.all
 
   end
-
   def create
+    puts "**************"
+    topics =  params[:topics]
+    @article = Article.create(article_params)
 
-    puts "*******************"
-    puts params
-
-    @articles = Article.create(article_params)
+    topics.each do |t|
+      @article.topics.push(Topic.find(t))
+    end
 
     # if @articles.save
     #   flash[:notice] = "Your account has been created."
-      redirect_to articles_path
+    
+    redirect_to article_path @article
     # else
     #   flash[:alert] = "There was a problem saving your account."
     #   redirect_to articles_path_new
@@ -34,6 +36,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def destroy
