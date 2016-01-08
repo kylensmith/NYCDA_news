@@ -28,6 +28,11 @@ class ArticlesController < ApplicationController
     # end
   end
 
+  def categorize
+    @join = Article_topics.create() 
+  
+  end
+
   def edit
 
   end

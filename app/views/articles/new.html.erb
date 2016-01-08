@@ -11,6 +11,7 @@
 <%=f.label :image_url %>   
 <%=f.text_field :image_url %>  
 	
+
 <!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
     <% @topic.each do |z| %>
     
@@ -19,5 +20,6 @@
     <%=label_tag z.category%>
     <%end%>
 
+	
 <%=f.submit :create %> 
 <% end %>

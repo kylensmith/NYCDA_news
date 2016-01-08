@@ -2,8 +2,8 @@ class SessionsController < ApplicationController
 	enable :sessions
 	set :sessions, true
 
-	def create_staff
-		
+	def create
+
 
 		@staff = Staff.find_by_email(params[:email]) 
 		if @staff and @staff.password == params[:password]
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 	end
 
 	def create_subscriber
-		
+
 
 		@subscriber = Subscriber.find_by_email(params[:email]) 
 		if @subscriber and @subscriber.password == params[:password]
