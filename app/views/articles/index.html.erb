@@ -3,6 +3,7 @@
 
 <% Article.all.reverse.each do |article| %>
    <h3><%= article.title %></h3>
+   <%= image_tag("/assets/#{article.image_url}")%>
    <p><%= article.body %></p>
    <p><%= article.created_at.strftime('%m-%d-%Y %I:%M:%S %P') %></p>
 <% end %>
