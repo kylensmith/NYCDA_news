@@ -1,2 +1,9 @@
-<h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<h1><%= @article.title %></h1>
+
+
+
+<% @article.topics.each do |t| %>
+<%= content_tag :h1 do %>
+<%= t.category %>
+<% end %>
+<% end %>
