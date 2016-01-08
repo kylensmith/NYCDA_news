@@ -1,3 +1,12 @@
 <h1>Topics#show</h1>
 <p>Find me in app/views/topics/show.html.erb</p>
 
+
+<%= content_tag :h1, @topic.category %> 
+
+<!-- Loop through this @topic's articles -->
+
+<% @revelant_articles.each do |a| %>
+	<%= Article.find(a.article_id).title%>
+<br>
+<% end %>

@@ -26,7 +26,9 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @topic = Topic.where(:category => :category)
+    # @topic = Topic.where(:category => :category)
+    @topic = Topic.find(params[:id])
+    @revelant_articles = ArticleTopic.where(topic_id: @topic.id)
   end
 
   def destroy
