@@ -11,13 +11,12 @@
 <%=f.label :image_url %>   
 <%=f.text_field :image_url %>  
 	
-<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
-	<% @topic.each do |z| %>
+	<% topic.each do |z| %>
 	<br>
-	<%=check_box_tag z.category, 'yes', false%><%=z.category%>
+	<%=check_box_tag 'topics[]', z.id %>
+	<%=label_tag z.category%>
 	<%end%>
-	<!-- Note: this feature is NOT WORKING and needs to be fixed so that it populates the data correctly in the join table.  -->
-	
 
+	
 <%=f.submit :create %> 
 <% end %>

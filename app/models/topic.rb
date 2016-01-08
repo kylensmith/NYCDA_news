@@ -1,3 +1,4 @@
 class Topic < ActiveRecord::Base
-	has_many :articles, through: :article_topic
+	has_many :articles, through: :article_topics
+	has_many :articles
 end
