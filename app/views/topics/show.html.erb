@@ -1,12 +1,23 @@
-<h1>Topics#show</h1>
+<p>Topics#show</p>
 <p>Find me in app/views/topics/show.html.erb</p>
 
+<!-- This is the title for the section. -->
+<%= content_tag :div, @topic.category, class: "topic-category"%> 
 
-<%= content_tag :h1, @topic.category %> 
+<!-- Loop through this @topic's eight most recent articles -->
 
-<!-- Loop through this @topic's articles -->
+<% @revelant_articles.last(8).reverse.each do |a| %>
 
-<% @revelant_articles.each do |a| %>
-	<%= Article.find(a.article_id).title%>
+	<%= content_tag :div, class: "topic-article" do -%>
+		<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
+		<%=link_to(image_tag((Article.find(a.article_id).image_url)), (article_path(a.article_id))) %>
+	<% end %>
+
+	
+<br>
+<br>
+<br>
+
 <br>
 <% end %>
+

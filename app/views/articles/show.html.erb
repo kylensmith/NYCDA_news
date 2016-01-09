@@ -1,10 +1,30 @@
-<h1><%= @article.title %></h1>
+<%= content_tag :div, @article.title, id: "article-title"%> 
 
 
+
+
+
+
+
+
+<%= content_tag :div, @article.created_at.strftime('%A, %B, %d, %Y'), id: "article-date"%> 
 
 <% @article.topics.each do |t| %>
-<%= content_tag :h1 do %>
+<%= content_tag :div, id: "article-category" do %>
 <%= t.category %>
-<%image_tag("blank_image.png")%>
 <% end %>
 <% end %>
+
+<%= content_tag :div, id: "article-author" do -%>
+<%=@article.staff.fname%> <%=@article.staff.lname%>, <%=@article.staff.job_title%>
+<%end%>
+
+
+
+
+
+
+<%= content_tag :div, @article.body, id: "article-body"%> 
+
+
+

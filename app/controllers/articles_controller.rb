@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
  def index
     @articles = Article.all
+    @topics = Topic.all
+    @story = Article.all.reverse 
 
   end
 
@@ -53,6 +55,6 @@ class ArticlesController < ApplicationController
 # this provdes additional security by only allowing the permitted variables to be accessed and changed.
 
   def article_params
-    params.require(:article).permit(:title, :body, :image_url, topics_attributes: [ :id, :category ])
+    params.require(:article).permit(:title, :body, :image_url, topics_attributes: [ :id, :category ], staff_atributes: [ session[:staff_id]])
   end
 end
