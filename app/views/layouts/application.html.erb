@@ -74,14 +74,12 @@
 						<% end %>
 					</div>
 				</li>
+				<li class="user_logout"><%= link_to 'Log Out', logout_path, method: :delete %></li>
 			</div>
 
 			<%end%>
 
 		</nav>
-
-
-
 
 		<nav id="topics">
 			<% @topics.each do |topic| %>
@@ -92,6 +90,8 @@
 	<div class="container">
 	<%= yield %>
 	</div>
+	<footer>
+	</footer>
 </body>
 </html>
 

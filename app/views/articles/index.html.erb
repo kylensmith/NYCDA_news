@@ -1,50 +1,54 @@
 
+
 <!-- This is the main news section for the website where it will display the five most recent articles from any category.  This will list the story title and the main picture taged with the page.     -->
 
 <!-- Note: each article is wrapped in a div with a uniqe number where the number is the instance 0-4. -->
 
-<%(0..4).each do |i| %>
+
+<div class="main_article">
+
+	<%(0..4).each do |i| %>
 
 	<%= content_tag :div, id: "article-#{i}-wrap" do %>
-		<%= content_tag :div, id: "article-#{i}-title" do %>
-		<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
-		<%end%>
-
-		
-		<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
-		
+	<%= content_tag :div, id: "article-#{i}-title" do %>
+	<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
 	<%end%>
-<% end %>
 
+	
+	<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
+	
+	
+	<%end%>
+	<% end %>
+</div>
+<div class="topics_feed">
 
-<!-- Loops through all topics and provides a heading title based on the topic name.  Then it loops through all of the articles within that topic to list them underneath the heading for that title. -->
+	<h3>NYCDA News - Topics Feed</h3>
 
-<% @topics.each do |topic| %>
+	<!-- Loops through all topics and provides a heading title based on the topic name.  Then it loops through all of the articles within that topic to list them underneath the heading for that title. -->
+
+	<% @topics.each do |topic| %>
 	<%= content_tag :div, class: "topic-wrap" do -%>
-		<%= content_tag :div, class: "topic-heading" do -%>
+	<%= content_tag :div, class: "topic-heading" do -%>
 
-		<%= link_to (topic.category), (topic_path(topic.id)) %>
-		
+	<%= link_to (topic.category), (topic_path(topic.id)) %>
 
-<% ArticleTopic.where(topic_id: Topic.find(topic).id).last(8).reverse.each do |a| %>
+
+	<% ArticleTopic.where(topic_id: Topic.find(topic).id).last(8).reverse.each do |a| %>
 
 	<%= content_tag :div, class: "topic-article" do -%>
-		<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
-		
+	<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
+
 	<% end %>
 
-<br>
-<% end %>
+	<br>
+	<% end %>
 
-		<%end%>
+	<%end%>
 	<%end%>
 
-<% end %>
-
-
-
-
-
+	<% end %>
+</div>
 
 
 

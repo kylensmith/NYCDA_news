@@ -1,18 +1,32 @@
-<h1>Subscribers#new</h1>
-<p>Find me in app/views/subscribers/new.html.erb</p>
-
-<%= form_for @subscriber do |f| %>   
-<%=f.label :First_Name %>   
-<%=f.text_field :fname %> 
-<%=f.label :Last_name %>   
-<%=f.text_field :lname %>  
-<%=f.label :email %>   
-<%=f.text_field :email %>  
-<%=f.label :password %>   
-<%=f.text_field :password %>  
-<%=f.label :city %>   
-<%=f.text_field :city %> 
-<%=f.label :state %>   
-<%=f.select :state, options_for_select(us_states) %>    
-<%=f.submit :create %> 
-<% end %>
+<div class="container">
+	<div id="join_today">
+		<h1>Join NYCDA News Today!<h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti dolorum repellat at nulla tempore numquam minus error, impedit laborum pariatur, delectus odio, perferendis quas reprehenderit amet. Commodi, enim dolorem.</p>
+	</div>
+		<h3>Sign Up</h3>
+		<div id="sign_up_form" class="form">
+			<%= form_for @subscriber do |f| %>   
+			<%=f.label :First_Name %>   
+			<%=f.text_field :fname %> 
+			<br><br>
+			<%=f.label :Last_name %>   
+			<%=f.text_field :lname %>  
+			<br><br>
+			<%=f.label :email %>   
+			<%=f.email_field :email %>  
+			<br><br>
+			<%=f.label :password %>   
+			<%=f.password_field :password %>  
+			<br><br>
+			<%=f.label :city %>   
+			<%=f.text_field :city %> 
+			<br><br>
+			<%=f.label :state %>   
+			<%=f.select :state, options_for_select(us_states) %>  
+			<br><br> 
+			<div class="button"><%=f.submit :create %></div>
+			<% end %>
+		</div>
+	</div>
+	<%= image_tag("/assets/join_subscribers.jpg") %>
+</div>

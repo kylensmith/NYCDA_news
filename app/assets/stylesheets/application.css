@@ -1,3 +1,4 @@
+/*main layout*/
 body {
 	background-color: ;
 	font-family: helvetica;
@@ -5,6 +6,7 @@ body {
 #logo {
 	float: left;
 	margin-left: 20px;
+	margin-bottom: 10px;
 }
 header {
 	background-color: #ffffff;
@@ -15,7 +17,7 @@ nav {
 	margin-right: 25px;
 }
 .topics_nav {
-	border: 2px solid black;
+	border: 2px solid #525564;
 	float: right;
 	list-style-type: none;
 	text-transform: uppercase;
@@ -25,6 +27,8 @@ nav {
 	letter-spacing: 0.15em;
 	font-size: 1.1em;
 	font-weight: bold;
+	background-color: #525564;
+	padding: 2px;
 }
 
 a:link, a:visited { 
@@ -33,23 +37,108 @@ a:link, a:visited {
 }
 a:hover {
 	color: #96C0CE;
-	background-color: #74828F;
 }
-.user_login {
+.user_login, .user_logout {
 	list-style-type: none;
 	text-transform: uppercase;
 	font-size: 0.8em;
 }
 #sign_in_form {
-	background-color: #74828F;
+	background-color: #FEF6EB;
 	margin-top: 2px;
+}
+#join_today {
+	width: 40%;
+	float: left;
 }
 .container {
 	/*clear: both;*/
-	background-color: #74828F;
+	/*background-color: #525564;*/
 	padding: 10px;
+}
+footer {
+	clear: both;
+	height: 100px;
+	background-color: red;
 }
 .form {
 	text-align: right;
 	padding: 4px;
 }
+#sign_up_form {
+	border: 2px solid black;
+	width: 25%;
+	font-size: 1em;
+	text-transform: uppercase;
+	background-color: #FEF6EB;
+	color: #525564;
+	float: left;
+}
+.button {
+	color: #C25B56;
+}
+
+/*artiles index*/
+
+.main_article {
+	border: 2px solid black;
+	float: left;
+	width: 75%;
+	margin-top: 20px;
+}
+#article-0-picture, #article-1-picture, #article-2-picture, #article-3-picture, #article-4-picture{
+	border: 5px solid #ffffff;
+	width: 100%;
+	box-shadow: 0px 0px 10px #fff;
+	z-index: 0;
+}
+#article-0-wrap, #article-1-wrap, #article-2-wrap, #article-3-wrap, #article-4-wrap {
+	border: 2px solid green;
+	background-color: #FEF6EB;
+	margin: 14px;
+	padding: 10px;
+	width: 95%;
+	float: left;
+}
+#article-0-title, #article-1-title, #article-2-title, #article-3-title, #article-4-title {
+	font-size: 1.75em;
+	/*float: right;*/
+	text-align: left;
+	background-color: #525564;
+	padding: 4px;
+	z-index: 1;
+}
+.topics_feed {
+	border: 2px solid pink;
+	width: 20%;
+	float: right;
+	padding: 10px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+
+h3 {
+	text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
