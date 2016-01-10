@@ -12,8 +12,8 @@ class ApplicationController < ActionController::Base
     session[:subscriber_id] ? User.find(session[:subscriber_id]) : nil
   end
 
-
   def get_topics
      @topics = Topic.all
   end
+  
 end
