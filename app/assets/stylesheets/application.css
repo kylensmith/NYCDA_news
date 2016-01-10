@@ -53,13 +53,13 @@ a:hover {
 }
 .container {
 	/*clear: both;*/
-	/*background-color: #525564;*/
+	/*background-color: #C25B56;*/
 	padding: 10px;
 }
 footer {
 	clear: both;
 	height: 100px;
-	background-color: red;
+	background-color: #525564;
 }
 .form {
 	text-align: right;
@@ -109,7 +109,7 @@ footer {
 	z-index: 1;
 }
 .topics_feed {
-	border: 2px solid pink;
+	background-color: #C25B56;
 	width: 20%;
 	float: right;
 	padding: 10px;
@@ -119,6 +119,16 @@ footer {
 
 h3 {
 	text-align: center;
+	color: #ffffff;
+}
+.topic-heading {
+	background-color: #ffffff;
+	padding: 4px;
+}
+
+.topic-article {
+	background-color: #525564;
+	font-style: italic;
 }
 
 

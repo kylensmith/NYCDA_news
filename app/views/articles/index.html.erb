@@ -9,16 +9,16 @@
 
 	<%(0..4).each do |i| %>
 
-	<%= content_tag :div, id: "article-#{i}-wrap" do %>
-	<%= content_tag :div, id: "article-#{i}-title" do %>
-	<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
-	<%end%>
+		<%= content_tag :div, id: "article-#{i}-wrap" do %>
+		<%= content_tag :div, id: "article-#{i}-title" do %>
+		<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
+		<%end%>
 
 	
-	<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
-	
-	
-	<%end%>
+		<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
+		
+		
+		<%end%>
 	<% end %>
 </div>
 <div class="topics_feed">
