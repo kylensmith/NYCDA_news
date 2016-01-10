@@ -1,22 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>News</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>News</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<%= link_to image_tag("nycda_logo_1.png", width: "400px"),root_path %>
+		<nav id="user">
+			<li class="user_login"><%= link_to 'Sign Up', new_subscriber_path %></li>
+			<div id="sign_in_form">
+				<li class="user_login">Sign In:
+					<div class="form">
+						<%= form_tag '/login', method: :post do %>
+							<%= label_tag :email %>
+							<%= email_field_tag :email %>
+							<br>
+							<%= label_tag :password %>
+							<%= password_field_tag :password %>
+							<div class="button"><%= submit_tag "Log In" %></div>
+						<% end %>
+					</div>
+				</li>
+			</div>
+		</nav>
 
-<nav>
-	<ul>
-        <li><%= link_to 'Home', root_path %></li>
-        <% @topics.each do |topic| %>
-        <li><%= link_to (topic.category), (topic_path(topic.id)) %></li>
-        <% end %>
-	</ul>
-</nav>
-<%= yield %>
-
+		<nav id="topics">
+			<% @topics.each do |topic| %>
+			<li class="topics_nav"><%= link_to (topic.category), (topic_path(topic.id)) %></li>
+			<% end %>
+		</nav>
+	</header>
+	<div class="container">
+	<%= yield %>
+	</div>
 </body>
 </html>
+
+
+
+	
+

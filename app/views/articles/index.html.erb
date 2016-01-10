@@ -1,6 +1,10 @@
 <h1>Articles#index</h1>
 <p>Find me in app/views/articles/index.html.erb</p>
 
+name of staff : <%= session[:staff_id] %>
+name of subscriber : <%= session[:subscriber_id] %>
+<%= link_to 'Log Out', logout_path, method: :delete %>
+
 <!-- This is the main news section for the website where it will display the five most recent articles from any category.  This will list the story title and the main picture taged with the page.     -->
 
 Note: each article is wrapped in a div with a uniqe number where the number is the instance 0-4.
@@ -53,3 +57,4 @@ Note: each article is wrapped in a div with a uniqe number where the number is t
 
 
 
+>>>>>>> b8ea62810d00a53811002718b5333b485172eca4

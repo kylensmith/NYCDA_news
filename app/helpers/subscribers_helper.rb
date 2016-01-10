@@ -1,4 +1,5 @@
 module SubscribersHelper
+
 		def us_states
 	    [
 	      ['Alabama', 'AL'],

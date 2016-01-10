@@ -2,11 +2,15 @@ Rails.application.routes.draw do
   root 'articles#index'
 
   resources :staffs, :subscribers, :articles, :comments, :topics
+
  get '/staff' => 'staffs#index'
   post '/subscriber-login' => 'sessions#create'
   post '/staff-login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   post '/post-comment' => 'comments#create'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
