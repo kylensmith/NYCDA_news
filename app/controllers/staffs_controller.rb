@@ -1,6 +1,7 @@
 class StaffsController < ApplicationController
   def index
     @staff = Staff.all
+    @current_subscriber = current_subscriber
     @current_staff = current_staff
   end
 
@@ -27,6 +28,8 @@ class StaffsController < ApplicationController
   end
 
   def show
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def destroy

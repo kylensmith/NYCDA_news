@@ -1,7 +1,7 @@
 <%= content_tag :div, id: "article-show-wrap" do %>
 
 
-<%= content_tag :div, @article.title, id: "article-title"%> 
+<%= content_tag :div, @article.title, class: "article-title"%> 
 
 
 
@@ -21,7 +21,6 @@
 <%= content_tag :div, id: "article-author" do -%>
 <%=@article.staff.fname%> <%=@article.staff.lname%>, <%=@article.staff.job_title%>
 <%end%>
-
 
 
 
@@ -57,17 +56,22 @@ You must be logged in to post to the forum.  If you would like to post, please l
 <br>
 
 <!-- This is a list of comments -->
-	<%= @comment.each do |w|%> 
+	<% @comment.each do |w|%> 
 	
-<%= w.subscriber.fname%>
+<%= w.subscriber.fname%> <%= w.subscriber.lname%> (<%= w.subscriber.city%>, <%= w.subscriber.state%>)
 <br>
 <%= w.feedback%>
 
 <br>
-<%= w.created_at.strftime('%A, %B %d, %Y  %I:%M %p')%>
+
+<%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
+
 <br>
 <br>
-	</div>
+	
 	
 
 	<% end%>
+
+
+

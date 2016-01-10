@@ -8,6 +8,7 @@
 
 
 /*Index page formatting*/
+
 .topic-wrap { 
 	margin: 10px;
 	border-style: solid;
@@ -128,7 +129,7 @@
 	margin-left: 30px;
 }
 
-#article-title {
+.article-title {
 	font-size: 20px;
 	text-align: center;
 
@@ -150,3 +151,7 @@
 	width: 650px;
 }
 
+#comment-date {
+	font-size: 8px;
+	color: red;
+}

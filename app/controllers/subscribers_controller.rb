@@ -2,6 +2,7 @@ class SubscribersController < ApplicationController
  
  def index
     @subscribers = Subscriber.all
+    @current_subscriber = current_subscriber
 
   end
 
@@ -28,6 +29,8 @@ class SubscribersController < ApplicationController
   end
 
   def show
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def destroy

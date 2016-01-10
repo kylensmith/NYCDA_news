@@ -77,7 +77,7 @@ Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias 
 i.topics.push(biz)
 
 
-z = Article.create(title: "After complaints from customers, Chipotle says all food will food will be at least 80% E.coli free at all locations", body: "Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.
+z = Article.create(title: "After complaints from customers, Chipotle says all food will be at least 80% E.coli free at all locations", body: "Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.
 \n Similique honestatis ut eos, nibh bonorum mei an, nam eu tempor regione. Et
 reprimique conclusionemque vim, pri ut sint assum, adhuc iisque vel at. Nonumy
 populo voluptatum ea usu, sed agam vidisse reprimique eu, ad elitr

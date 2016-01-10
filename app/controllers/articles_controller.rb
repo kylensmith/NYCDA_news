@@ -4,6 +4,8 @@ class ArticlesController < ApplicationController
     @topics = Topic.all
     @story = Article.all.reverse 
     @staff = current_staff
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
 
   end
 
@@ -49,6 +51,8 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.where(article_id: params[:id])
+  @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def destroy

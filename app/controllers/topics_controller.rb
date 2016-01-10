@@ -1,10 +1,14 @@
 class TopicsController < ApplicationController
   def index
     @topic = Topic.all
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def new
     @topic = Topic.new
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def create
@@ -29,6 +33,8 @@ class TopicsController < ApplicationController
     # @topic = Topic.where(:category => :category)
     @topic = Topic.find(params[:id])
     @revelant_articles = ArticleTopic.where(topic_id: @topic.id)
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def destroy

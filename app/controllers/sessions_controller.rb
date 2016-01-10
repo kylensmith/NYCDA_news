@@ -8,15 +8,17 @@ class SessionsController < ApplicationController
 		@user = Staff.find_by_email(params[:email]) 
 		if @user and @user.password == params[:password]
 			session[:staff_id] = @user.id 
-			redirect_to articles_path
+			flash[:alert] = "There was a problem, please try again."
+			redirect_to (:back)
 		else 
 			@user = Subscriber.find_by_email(params[:email]) 
 			if @user and @user.password == params[:password]
 				session[:subscriber_id] = @user.id 
-				redirect_to subscribers_path
+				flash[:alert] = "There was a problem, please try again."
+				redirect_to (:back)
 			else
 				flash[:alert] = "There was a problem, please try again."
-				redirect_to articles_path
+				redirect_to (:back)
 			end
 		end
 	end
@@ -26,13 +28,13 @@ class SessionsController < ApplicationController
 	def destroy
 		session[:subscriber_id] = nil
 		session[:staff_id] = nil
-		redirect_to root_path
+		redirect_to articles_path
 	end
 
 	def destroy
 		session[:staff_id] = nil
 		session[:subscriber_id] = nil
-		redirect_to root_path
+		redirect_to articles_path
 		
 	end
 
