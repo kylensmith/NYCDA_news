@@ -26,7 +26,6 @@
 				</li>
 			</div>
 		</nav>
-
 		<nav id="topics">
 			<% @topics.each do |topic| %>
 			<li class="topics_nav"><%= link_to (topic.category), (topic_path(topic.id)) %></li>
@@ -36,6 +35,8 @@
 	<div class="container">
 	<%= yield %>
 	</div>
+	<footer>
+	</footer>
 </body>
 </html>
 
