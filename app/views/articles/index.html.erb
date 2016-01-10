@@ -1,9 +1,55 @@
 <h1>Articles#index</h1>
 <p>Find me in app/views/articles/index.html.erb</p>
 
-<% Article.all.reverse.each do |article| %>
-   <h3><%= article.title %></h3>
-   <%= image_tag("/assets/#{article.image_url}")%>
-   <p><%= article.body %></p>
-   <p><%= article.created_at.strftime('%m-%d-%Y %I:%M:%S %P') %></p>
+<!-- This is the main news section for the website where it will display the five most recent articles from any category.  This will list the story title and the main picture taged with the page.     -->
+
+Note: each article is wrapped in a div with a uniqe number where the number is the instance 0-4.
+
+<%(0..4).each do |i| %>
+
+	<%= content_tag :div, id: "article-#{i}-wrap" do %>
+		<%= content_tag :div, id: "article-#{i}-title" do %>
+		<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
+		<%end%>
+
+		
+		<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
+		
+	<%end%>
 <% end %>
+
+
+<!-- Loops through all topics and provides a heading title based on the topic name.  Then it loops through all of the articles within that topic to list them underneath the heading for that title. -->
+
+<% @topics.each do |topic| %>
+	<%= content_tag :div, class: "topic-wrap" do -%>
+		<%= content_tag :div, class: "topic-heading" do -%>
+
+		<%= link_to (topic.category), (topic_path(topic.id)) %>
+		
+
+<% ArticleTopic.where(topic_id: Topic.find(topic).id).last(8).reverse.each do |a| %>
+
+	<%= content_tag :div, class: "topic-article" do -%>
+		<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
+		
+	<% end %>
+
+<br>
+<% end %>
+
+		<%end%>
+	<%end%>
+
+<% end %>
+
+
+
+
+
+
+
+
+
+
+

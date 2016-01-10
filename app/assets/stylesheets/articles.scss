@@ -1,3 +1,152 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+
+
+/*Index page formatting*/
+.topic-wrap { 
+	margin: 10px;
+	border-style: solid;
+	width: 300px;
+	
+}
+
+.topic-heading { 
+	border-style: solid;
+	width: 300px;
+	margin: 5px;
+	font-weight: bold;
+	
+}
+
+.topic-article { 
+	border-style: solid;
+	width: 300px;
+	margin: 5px;
+	
+}
+
+#article-0-wrap {
+	border-style: solid;
+	width: 400px;
+	display: block;
+
+}
+
+#article-1-wrap {
+	border-style: solid;
+	width: 400px;
+	display: inline-block;
+}
+
+#article-2-wrap {
+	border-style: solid;
+	width: 400px;
+	display: inline-block
+}
+
+#article-3-wrap{
+	border-style: solid;
+	width: 400px;
+}
+#article-4-wrap {
+	border-style: solid;
+	width: 400px;
+}
+
+
+#article-0-title {
+	text-decoration: none;
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#article-1-title {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#article-2-title {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+#article-3-title{
+	font-weight: bold;
+	font-size: 15px;
+}
+#article-4-title {
+	font-weight: bold;
+	font-size: 15px;
+}
+
+
+
+#article-0-picture {
+	display: inline-block;
+	width: 300px;
+
+
+}
+
+#article-1-picture {
+	display: inline-block;
+	width: 100px;
+	
+}
+
+#article-2-picture {
+	display: inline-block;
+	width: 100px;
+	
+}
+
+#article-3-picture{
+	display: inline-block;
+	width: 100px;
+	
+}
+#article-4-picture {
+	display: inline-block;
+	width: 100px;
+	
+}
+
+
+
+
+
+
+/*Show Page formatting*/
+
+#article-show-wrap {
+	width: 700px;
+	margin-left: 30px;
+}
+
+#article-title {
+	font-size: 20px;
+	text-align: center;
+
+}
+
+#article-date {
+	
+}
+
+#article-categoty {
+
+}
+
+#article-author {
+	font-weight: bold;
+}
+
+#article-body { 
+	width: 650px;
+}
+

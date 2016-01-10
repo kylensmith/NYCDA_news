@@ -8,4 +8,17 @@ class ApplicationController < ActionController::Base
   def get_topics
      @topics = Topic.all
  end
+
+def current_subscriber
+	if session[:subscriber_id]
+		@current_subscriber = Subscriber.find(session[:subscriber_id])
+	end
+end
+
+def current_staff
+	if session[:staff_id]
+		@current_staff = Staff.find(session[:staff_id])
+	end
+end
+
 end

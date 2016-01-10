@@ -1,7 +1,10 @@
 <h1>Topics#index</h1>
 <p>Find me in app/views/topics/index.html.erb</p>
 
-<% @topic.each do |topic| %>
+<% @topic.last(20).reverse.each do |topic| %>
+<%for i in i...20 do %>
+<% content_tag :div, id: "Article#{i}" %>
+<% end %>
    <%= link_to (topic.category), (topic_path(topic.category)) %>
    <%= image_tag("/assets/#{article.image_url}")%>
 <% end %>
