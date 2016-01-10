@@ -53,3 +53,9 @@ a:hover {
 	text-align: right;
 	padding: 4px;
 }
+#sign_up_form {
+	border: 2px solid black;
+	width: 40%;
+	padding-right: 25%;
+	margin-left: 15%;
+}
