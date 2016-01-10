@@ -8,61 +8,35 @@
 </head>
 <body>
 	<header>
-		<%= link_to image_tag("nycda_logo_1.png", width: "400px"),root_path %>
+		<%= link_to image_tag("nycda_logo_1.png", id: "logo"),root_path %>
 		<nav id="user">
-
-
-
-
 			<%if session[:subscriber_id] %>
-
-
 				<div id="sign_in_form">
 					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>.
 						<div class="form">
 							<%= link_to 'Account', (subscriber_path(@current_subscriber)) %>
-
-
 							</div>
 							<div class="form">
-
-
 							<%= link_to 'Log Out', logout_path, method: :delete %>
 						</div>
 					</li>
 				</div>
-
-
-
 				<%elsif session[:staff_id] %>
-
-
 				<div id="sign_in_form">
 					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>.
 						<div class="form">
 							<%= link_to 'View your account', (staff_path(@current_staff)) %>
-
 							</div>
 							<div class="form">
-
-
-							
-
-
 							<%= link_to 'Click here to Log Out', logout_path, method: :delete %>
 						</div>
 					</li>
 				</div>
-
-
-
-
-
 			<%else%>
-			
-							<div class="form">
-			<div id="sign_in_form">
-				<li class="user_login">Sign In:
+				<div class="form">
+				<li><%= link_to 'Sign Up', new_subscriber_path %></li>
+				<div id="sign_in_form">
+				<li class="user_login">
 					<div class="form">
 						<%= form_tag '/login', method: :post do %>
 							<%= label_tag :email %>
@@ -74,7 +48,6 @@
 						<% end %>
 					</div>
 				</li>
-				<li class="user_logout"><%= link_to 'Log Out', logout_path, method: :delete %></li>
 			</div>
 
 			<%end%>
@@ -90,8 +63,8 @@
 	<div class="container">
 	<%= yield %>
 	</div>
-	<footer>
-	</footer>
+	<div class="footer">
+	</div>
 </body>
 </html>
 

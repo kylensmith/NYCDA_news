@@ -1,16 +1,20 @@
-/*main layout*/
 body {
-	background-color: ;
 	font-family: helvetica;
 }
+.body {
+	background-color: #525564;
+}
 #logo {
-	float: left;
-	margin-left: 20px;
-	margin-bottom: 10px;
+	margin-left: 10px;
+	/*border: 2px solid black;*/
+	width: 25%;
+	padding-top: 7px;
 }
 header {
 	background-color: #ffffff;
-	height: 100px;
+	height: 110px;
+	/*background-color: #96C0CE;*/
+
 }
 nav {
 	float: right;
@@ -22,13 +26,13 @@ nav {
 	list-style-type: none;
 	text-transform: uppercase;
 	margin: 8px;
-	margin-top: 75px;
+	margin-top: 82px;
 	font-size: 14px;
 	letter-spacing: 0.15em;
 	font-size: 1.1em;
 	font-weight: bold;
 	background-color: #525564;
-	padding: 2px;
+	padding: 2px 6px;
 }
 
 a:link, a:visited { 
@@ -36,7 +40,7 @@ a:link, a:visited {
 	text-decoration: none;
 }
 a:hover {
-	color: #96C0CE;
+	color: #ffffff;
 }
 .user_login, .user_logout {
 	list-style-type: none;
@@ -51,15 +55,18 @@ a:hover {
 	width: 40%;
 	float: left;
 }
-.container {
-	/*clear: both;*/
-	/*background-color: #C25B56;*/
-	padding: 10px;
+.body {
+	background-color: #525564;
 }
-footer {
+.container {
+	background-color: #525564;
+	padding: 10px;
+	height: 100%;
+}
+.footer {
 	clear: both;
 	height: 100px;
-	background-color: #525564;
+	background-color: #96C0CE;
 }
 .form {
 	text-align: right;
@@ -109,14 +116,13 @@ footer {
 	z-index: 1;
 }
 .topics_feed {
-	background-color: #C25B56;
+	background-color: #96C0CE;
 	width: 20%;
 	float: right;
 	padding: 10px;
 	margin-right: 20px;
 	margin-top: 20px;
 }
-
 h3 {
 	text-align: center;
 	color: #ffffff;
@@ -125,20 +131,36 @@ h3 {
 	background-color: #ffffff;
 	padding: 4px;
 }
-
 .topic-article {
 	background-color: #525564;
 	font-style: italic;
 }
-
-
-
-
-
-
-
-
-
+#small_logo {
+	/*border: 2px solid black;*/
+	padding: 4px;
+	box-shadow: 0px 0px 10px #fff;
+	background-color: #ffffff;
+	margin-left: 12%;
+}
+/*topics#show*/
+.topic-category {
+	border: 2px solid black;
+	font-size: 2em;
+	text-align: center;
+}
+.topic-articles-feed {
+	width: 50%;
+}
+.topic-article-main {
+	border: 2px solid pink;
+}
+.topics-photo {
+	width: 40%;
+	border: 4px solid green;
+}
+.topic-page-heading {
+	color: #96C0CE;
+}
 
 
 
