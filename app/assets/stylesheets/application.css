@@ -1,7 +1,55 @@
 body {
 	background-color: ;
+	font-family: helvetica;
 }
-.nav_menu_item {
-	color: #ffffff;
+#logo {
+	float: left;
+	margin-left: 20px;
+}
+header {
+	background-color: #ffffff;
+	height: 100px;
+}
+nav {
+	float: right;
+	margin-right: 25px;
+}
+.topics_nav {
+	border: 2px solid black;
+	float: right;
+	list-style-type: none;
+	text-transform: uppercase;
+	margin: 8px;
+	margin-top: 75px;
+	font-size: 14px;
+	letter-spacing: 0.15em;
+	font-size: 1.1em;
+	font-weight: bold;
+}
 
+a:link, a:visited { 
+	color: #96C0CE;
+	text-decoration: none;
+}
+a:hover {
+	color: #96C0CE;
+	background-color: #74828F;
+}
+.user_login {
+	list-style-type: none;
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+#sign_in_form {
+	background-color: #74828F;
+	margin-top: 2px;
+}
+.container {
+	/*clear: both;*/
+	background-color: #74828F;
+	padding: 10px;
+}
+.form {
+	text-align: right;
+	padding: 4px;
 }
