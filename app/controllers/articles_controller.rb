@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
  def index
     @articles = Article.all
+    @topics = Topic.all
+    @story = Article.all.reverse 
 
   end
 
@@ -13,6 +15,8 @@ class ArticlesController < ApplicationController
     puts "**************"
     topics =  params[:topics]
     @article = Article.create(article_params)
+    @article.staff = current_staff
+
 
     topics.each do |t|
       @article.topics.push(Topic.find(t))

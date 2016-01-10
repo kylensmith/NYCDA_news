@@ -5,15 +5,27 @@ class ApplicationController < ActionController::Base
   before_action :get_topics
   
   def current_staff
-    session[:staff_id] ? User.find(session[:staff_id]) : nil
+  	session[:staff_id] ? User.find(session[:staff_id]) : nil
   end
 
   def current_subscriber
-    session[:subscriber_id] ? User.find(session[:subscriber_id]) : nil
+  	session[:subscriber_id] ? User.find(session[:subscriber_id]) : nil
   end
 
   def get_topics
-     @topics = Topic.all
+  	@topics = Topic.all
   end
   
+  def current_subscriber
+  	if session[:subscriber_id]
+  		@current_subscriber = Subscriber.find(session[:subscriber_id])
+  	end
+  end
+
+  def current_staff
+  	if session[:staff_id]
+  		@current_staff = Staff.find(session[:staff_id])
+  	end
+  end
+
 end

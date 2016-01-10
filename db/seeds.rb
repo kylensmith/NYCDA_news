@@ -37,7 +37,7 @@ Similique honestatis ut eos, nibh bonorum mei an, nam eu tempor regione. Et
 reprimique conclusionemque vim, pri ut sint assum, adhuc iisque vel at. Nonumy
 populo voluptatum ea usu, sed agam vidisse reprimique eu, ad elitr
 comprehensam sit. Ad duo omnesque torquatos, ius ne elitr definiebas. Eos quis
-scripserit cu.", image_url: "news.jpg") 
+scripserit cu.", image_url: "news.jpg", staff_id: 1) 
 f.topics.push(news)
 
 g = Article.create(title: "Sports Team Wins Sporting Event", body: "Lorem ipsum dolor sit amet, doming cetero sit ex. Pri ea noluisse pertinax. Cu mollis tincidunt mediocritatem eos. Cu patrioque prodesset mel, sit ea sententiae reprehendunt. Ea consulatu argumentum sea. Regione ancillae persequeris te mei, regione sensibus usu at. Ut duis inimicus eam, soluta audiam iudicabit vel at. \n
@@ -51,7 +51,7 @@ Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium re
 
 Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
 
-Mei apeirian consequat eu. At qui tollit equidem. Ne mutat ullamcorper suscipiantur pro, qui quas noster no. Alia oportere eam ne.", image_url: "sports.jpg")
+Mei apeirian consequat eu. At qui tollit equidem. Ne mutat ullamcorper suscipiantur pro, qui quas noster no. Alia oportere eam ne.", image_url: "sports.jpg", staff_id: 1)
 g.topics.push(sports)
 
 
@@ -60,7 +60,7 @@ d = Article.create(title: "Movie Star to Star in Movie", body: "Ad justo soluta 
 Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\r\n
 
 Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
-", image_url: "ent.jpg")
+", image_url: "ent.jpg", staff_id: 2)
 d.topics.push(ent)
 
 
@@ -73,7 +73,7 @@ scripserit cu. Ad justo soluta pro, posse praesent quo te, nec brute virtute hen
 Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\n
 
 Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
-", image_url: "business.jpg")
+", image_url: "business.jpg", staff_id: 1)
 i.topics.push(biz)
 
 
@@ -85,5 +85,36 @@ comprehensam sit. Ad duo omnesque torquatos, ius ne elitr definiebas. Eos quis
 scripserit cu.\n Ad justo soluta pro, posse praesent quo te, nec brute virtute hendrerit at. Dico alienum convenire cu qui, et epicurei tincidunt pro, postea volumus nam id. Inani prompta id sea. Usu illud adversarium ut. Eu possit temporibus sed. Simul adipiscing an cum, usu habeo modus periculis in, ad liber intellegam nam. Volumus adipisci scribentur per eu, duo id efficiendi signiferumque, sea ne aliquam iudicabit disputationi.\n
 
 Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\nEa reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.
-", image_url: "food.jpg")
+", image_url: "food.jpg", staff_id: 2)
 z.topics.push(food)
+
+kv = Article.create(title: "Kevin's reviews: best places to grab lunch with your ex! ", body: "Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.
+\n Similique honestatis ut eos, nibh bonorum mei an, nam eu tempor regione. Et
+reprimique conclusionemque vim, pri ut sint assum, adhuc iisque vel at. Nonumy
+populo voluptatum ea usu, sed agam vidisse reprimique eu, ad elitr
+comprehensam sit. Ad duo omnesque torquatos, ius ne elitr definiebas. Eos quis
+scripserit cu.\n Ad justo soluta pro, posse praesent quo te, nec brute virtute hendrerit at. Dico alienum convenire cu qui, et epicurei tincidunt pro, postea volumus nam id. Inani prompta id sea. Usu illud adversarium ut. Eu possit temporibus sed. Simul adipiscing an cum, usu habeo modus periculis in, ad liber intellegam nam. Volumus adipisci scribentur per eu, duo id efficiendi signiferumque, sea ne aliquam iudicabit disputationi.\n
+
+Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\nEa reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.
+", image_url: "food-1.jpg", staff_id: 1)
+kv.topics.push(food)
+
+il = Article.create(title: "Seth's daily salads", body: "Similique honestatis ut eos, nibh bonorum mei an, nam eu tempor regione. Et
+reprimique conclusionemque vim, pri ut sint assum, adhuc iisque vel at. Nonumy
+populo voluptatum ea usu, sed agam vidisse reprimique eu, ad elitr
+comprehensam sit. Ad duo omnesque torquatos, ius ne elitr definiebas. Eos quis
+scripserit cu. Ad justo soluta pro, posse praesent quo te, nec brute virtute hendrerit at. Dico alienum convenire cu qui, et epicurei tincidunt pro, postea volumus nam id. Inani prompta id sea. Usu illud adversarium ut. Eu possit temporibus sed. Simul adipiscing an cum, usu habeo modus periculis in, ad liber intellegam nam. Volumus adipisci scribentur per eu, duo id efficiendi signiferumque, sea ne aliquam iudicabit disputationi.\n
+
+Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\n
+
+Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
+", image_url: "food-2.jpg", staff_id: 2)
+il.topics.push(biz)
+
+dz = Article.create(title: "Charity established to benefit the 76ers", body: "Ad justo soluta pro, posse praesent quo te, nec brute virtute hendrerit at. Dico alienum convenire cu qui, et epicurei tincidunt pro, postea volumus nam id. Inani prompta id sea. Usu illud adversarium ut. Eu possit temporibus sed. Simul adipiscing an cum, usu habeo modus periculis in, ad liber intellegam nam. Volumus adipisci scribentur per eu, duo id efficiendi signiferumque, sea ne aliquam iudicabit disputationi.\n
+
+Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\r\n
+
+Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
+", image_url: "sports-1.png", staff_id: 1)
+dz.topics.push(sports)
