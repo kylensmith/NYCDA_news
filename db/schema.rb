@@ -30,11 +30,11 @@ ActiveRecord::Schema.define(version: 20160106215808) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "subscriber_id"
     t.integer  "article_id"
     t.text     "feedback"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "staffs", force: :cascade do |t|

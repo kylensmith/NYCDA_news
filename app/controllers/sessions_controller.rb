@@ -16,18 +16,18 @@ class SessionsController < ApplicationController
 				redirect_to subscribers_path
 			else
 				flash[:alert] = "There was a problem, please try again."
-				render :new
+				redirect_to articles_path
 			end
 		end
 	end
 
 	
 
-	# def destroy_subscriber
-	# 	session[:subscriber_id] = nil
-	# 	redirect_to root_path, notice "You have been logged out."
-
-	# end
+	def destroy
+		session[:subscriber_id] = nil
+		session[:staff_id] = nil
+		redirect_to root_path
+	end
 
 	def destroy
 		session[:staff_id] = nil

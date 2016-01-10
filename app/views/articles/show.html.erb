@@ -10,7 +10,7 @@
 
 
 
-<%= content_tag :div, @article.created_at.strftime('%A, %B, %d, %Y'), id: "article-date"%> 
+<%= content_tag :div, @article.created_at.strftime('%A, %B %d, %Y'), id: "article-date"%> 
 
 <% @article.topics.each do |t| %>
 <%= content_tag :div, id: "article-category" do %>
@@ -36,4 +36,38 @@ Confirm the viewer works...
 if current user is logged in: 
 
 
+<%if session[:subscriber_id] %>
+Anything you'd like to add?  
+	<%= form_tag "/comments", method: "post" do %>   
+	<%=label_tag :feedback %>   
+	<%=text_field_tag :feedback %> 
+	<%= hidden_field_tag :article_id, @article.id %>
+  Form contents
+	<%=submit_tag "Let your voice be heard." %> 
+	<% end %>
 
+<%else%>
+You must be logged in to post to the forum.  If you would like to post, please login here.
+<%end%>
+
+
+<br>
+<br>
+<br>
+<br>
+
+<!-- This is a list of comments -->
+	<%= @comment.each do |w|%> 
+	
+<%= w.subscriber.fname%>
+<br>
+<%= w.feedback%>
+
+<br>
+<%= w.created_at.strftime('%A, %B %d, %Y  %I:%M %p')%>
+<br>
+<br>
+	</div>
+	
+
+	<% end%>

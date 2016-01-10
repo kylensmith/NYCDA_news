@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     @articles = Article.all
     @topics = Topic.all
     @story = Article.all.reverse 
+    @staff = current_staff
 
   end
 
@@ -11,12 +12,13 @@ class ArticlesController < ApplicationController
     @topic = Topic.all
 
   end
+
+
   def create
-    puts "**************"
     topics =  params[:topics]
     @article = Article.create(article_params)
     @article.staff = current_staff
-
+    @article.save
 
     topics.each do |t|
       @article.topics.push(Topic.find(t))
@@ -46,6 +48,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.where(article_id: params[:id])
   end
 
   def destroy
