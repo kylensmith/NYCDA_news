@@ -2,24 +2,33 @@
 <p>Find me in app/views/articles/new.html.erb</p>
 
 
-<!-- This is a form used to create a new article from a member of the staff. -->
-<%= form_for @articles do |f| %>   
-<%=f.label :title %>   
-<%=f.text_field :title %> 
-<%=f.label :body %>   
-<%=f.text_field :body %>  
-<%=f.label :image_url %>   
-<%=f.text_field :image_url %>  
-	
+<!-- This will only show the form if the client is a logged in staff member. -->
+<% if session[:staff_id]%>
+	<!-- This is a form used to create a new article from a member of the staff. -->
+	<%= form_for @articles do |f| %>   
+	<%=f.label :title %>   
+	<%=f.text_field :title %> 
+	<%=f.label :body %>   
+	<%=f.text_field :body %>  
+	<%=f.label :image_url %>   
+	<%=f.text_field :image_url %>  
+		<%=f.session[:staff_id]%>
 
-<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
-    <% @topic.each do |z| %>
-    
-    <br>
-    <%=check_box_tag 'topics[]', z.id %> 
-    <%=label_tag z.category%>
-    <%end%>
+	<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
+	    <% @topic.each do |z| %>
+	    
+	    <br>
+	    <%=check_box_tag 'topics[]', z.id %> 
+	    <%=label_tag z.category%>
+	    <%end%>
 
-	
-<%=f.submit :create %> 
-<% end %>
+		
+	<%=f.submit :create %> 
+	<% end %>
+
+
+<%else%>
+You do not have permissions to access this page.
+
+
+<%end%>
