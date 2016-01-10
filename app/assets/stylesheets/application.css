@@ -13,25 +13,24 @@ body {
 header {
 	background-color: #ffffff;
 	height: 110px;
-	/*background-color: #96C0CE;*/
-
+	background-color: lightgray;
 }
 nav {
 	float: right;
 	margin-right: 25px;
 }
 .topics_nav {
-	border: 2px solid #525564;
+	border: 3px solid #ffffff;
 	float: right;
 	list-style-type: none;
 	text-transform: uppercase;
 	margin: 8px;
-	margin-top: 82px;
+	margin-top: 80px;
 	font-size: 14px;
 	letter-spacing: 0.15em;
 	font-size: 1.1em;
 	font-weight: bold;
-	background-color: #525564;
+	background-color: #ffffff;
 	padding: 2px 6px;
 }
 
@@ -40,7 +39,7 @@ a:link, a:visited {
 	text-decoration: none;
 }
 a:hover {
-	color: #ffffff;
+	color: #525564;
 }
 .user_login, .user_logout {
 	list-style-type: none;
@@ -48,18 +47,21 @@ a:hover {
 	font-size: 0.8em;
 }
 #sign_in_form {
-	background-color: #FEF6EB;
+	background-color: #74828F;
 	margin-top: 2px;
+	border: 2px solid #525564;
+	box-shadow: 0px 0px 10px #888888;
+	color: #ffffff;
 }
 #join_today {
 	width: 40%;
 	float: left;
 }
 .body {
-	background-color: #525564;
+	/*background-color: #525564;*/
 }
 .container {
-	background-color: #525564;
+	/*background-color: #525564;*/
 	padding: 10px;
 	height: 100%;
 }
@@ -88,20 +90,20 @@ a:hover {
 /*artiles index*/
 
 .main_article {
-	border: 2px solid black;
+	background-color: #525564;
 	float: left;
 	width: 75%;
 	margin-top: 20px;
 }
 #article-0-picture, #article-1-picture, #article-2-picture, #article-3-picture, #article-4-picture{
 	border: 5px solid #ffffff;
-	width: 100%;
+	width: 99%;
 	box-shadow: 0px 0px 10px #fff;
 	z-index: 0;
 }
 #article-0-wrap, #article-1-wrap, #article-2-wrap, #article-3-wrap, #article-4-wrap {
-	border: 2px solid green;
-	background-color: #FEF6EB;
+	/*border: 2px solid green;*/
+	background-color: #ffffff;
 	margin: 14px;
 	padding: 10px;
 	width: 95%;
@@ -111,12 +113,12 @@ a:hover {
 	font-size: 1.75em;
 	/*float: right;*/
 	text-align: left;
-	background-color: #525564;
+	/*background-color: #525564;*/
 	padding: 4px;
 	z-index: 1;
 }
 .topics_feed {
-	background-color: #96C0CE;
+	background-color: #C25B56;
 	width: 20%;
 	float: right;
 	padding: 10px;
@@ -141,12 +143,13 @@ h3 {
 	box-shadow: 0px 0px 10px #fff;
 	background-color: #ffffff;
 	margin-left: 12%;
+	padding-top: 20px;
 }
 /*topics#show*/
 .topic-category {
-	border: 2px solid black;
 	font-size: 2em;
 	text-align: center;
+	color: #96C0CE;
 }
 .topic-articles-feed {
 	width: 50%;
@@ -159,8 +162,13 @@ h3 {
 	border: 4px solid green;
 }
 .topic-page-heading {
-	color: #96C0CE;
+	
 }
+.topics_body {
+	width: 1100px;
+	margin: 0 auto;
+}
+
 
 
 

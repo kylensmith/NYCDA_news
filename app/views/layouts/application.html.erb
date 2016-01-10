@@ -12,7 +12,7 @@
 		<nav id="user">
 			<%if session[:subscriber_id] %>
 				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>.
+					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>!
 						<div class="form">
 							<%= link_to 'Account', (subscriber_path(@current_subscriber)) %>
 							</div>
@@ -21,14 +21,14 @@
 						</div>
 					</li>
 				</div>
-				<%elsif session[:staff_id] %>
+			<%elsif session[:staff_id] %>
 				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>.
+					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>!
 						<div class="form">
 							<%= link_to 'View your account', (staff_path(@current_staff)) %>
 							</div>
 							<div class="form">
-							<%= link_to 'Click here to Log Out', logout_path, method: :delete %>
+							<%= link_to 'Log Out', logout_path, method: :delete %>
 						</div>
 					</li>
 				</div>
