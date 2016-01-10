@@ -15,6 +15,8 @@ class ArticlesController < ApplicationController
     puts "**************"
     topics =  params[:topics]
     @article = Article.create(article_params)
+    @article.staff = current_staff
+
 
     topics.each do |t|
       @article.topics.push(Topic.find(t))
@@ -55,6 +57,6 @@ class ArticlesController < ApplicationController
 # this provdes additional security by only allowing the permitted variables to be accessed and changed.
 
   def article_params
-    params.require(:article).permit(:title, :body, :image_url, topics_attributes: [ :id, :category ], staff_atributes: [ session[:staff_id]])
+    params.require(:article).permit(:title, :body, :image_url, topics_attributes: [ :id, :category ])
   end
 end

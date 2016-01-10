@@ -2,6 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+
+
+
+/*Index page formatting*/
 .topic-wrap { 
 	margin: 10px;
 	border-style: solid;
@@ -113,4 +119,34 @@
 
 
 
+
+
+/*Show Page formatting*/
+
+#article-show-wrap {
+	width: 700px;
+	margin-left: 30px;
+}
+
+#article-title {
+	font-size: 20px;
+	text-align: center;
+
+}
+
+#article-date {
+	
+}
+
+#article-categoty {
+
+}
+
+#article-author {
+	font-weight: bold;
+}
+
+#article-body { 
+	width: 650px;
+}
 
