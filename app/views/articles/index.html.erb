@@ -4,52 +4,52 @@
 
 <!-- Note: each article is wrapped in a div with a uniqe number where the number is the instance 0-4. -->
 
+<div class="container">
+	<div class="main_article">
 
-<div class="main_article">
+		<%(0..4).each do |i| %>
 
-	<%(0..4).each do |i| %>
+			<%= content_tag :div, id: "article-#{i}-wrap" do %>
+			<%= content_tag :div, id: "article-#{i}-title" do %>
+			<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
+			<%end%>
 
-	<%= content_tag :div, id: "article-#{i}-wrap" do %>
-	<%= content_tag :div, id: "article-#{i}-title" do %>
-	<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
-	<%end%>
+		
+			<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
+			
+			
+			<%end%>
+		<% end %>
+	</div>
+	<div class="topics_feed">
+		<%=image_tag("nycda_logo_1.png", width: "200px", id: "small_logo") %>
+		<h3>Topics Feed</h3>
 
-	
-	<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
-	
-	
-	<%end%>
-	<% end %>
+		<!-- Loops through all topics and provides a heading title based on the topic name.  Then it loops through all of the articles within that topic to list them underneath the heading for that title. -->
+
+		<% @topics.each do |topic| %>
+		<%= content_tag :div, class: "topic-wrap" do -%>
+		<%= content_tag :div, class: "topic-heading" do -%>
+
+		<%= link_to (topic.category), (topic_path(topic.id)) %>
+
+
+		<% ArticleTopic.where(topic_id: Topic.find(topic).id).last(8).reverse.each do |a| %>
+
+		<%= content_tag :div, class: "topic-article-feed" do -%>
+		<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
+
+		<% end %>
+
+		<br>
+		<% end %>
+
+		<%end%>
+		<%end%>
+
+		<% end %>
+	</div>
 </div>
-<div class="topics_feed">
-
-	<h3>NYCDA News - Topics Feed</h3>
-
-	<!-- Loops through all topics and provides a heading title based on the topic name.  Then it loops through all of the articles within that topic to list them underneath the heading for that title. -->
-
-	<% @topics.each do |topic| %>
-	<%= content_tag :div, class: "topic-wrap" do -%>
-	<%= content_tag :div, class: "topic-heading" do -%>
-
-	<%= link_to (topic.category), (topic_path(topic.id)) %>
-
-
-	<% ArticleTopic.where(topic_id: Topic.find(topic).id).last(8).reverse.each do |a| %>
-
-	<%= content_tag :div, class: "topic-article" do -%>
-	<%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %>
-
-	<% end %>
-
-	<br>
-	<% end %>
-
-	<%end%>
-	<%end%>
-
-	<% end %>
-</div>
-
 
 
 
