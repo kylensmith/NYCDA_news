@@ -1,7 +1,7 @@
 class StaffsController < ApplicationController
   def index
     @staff = Staff.all
-
+    @current_staff = current_staff
   end
 
   def new
