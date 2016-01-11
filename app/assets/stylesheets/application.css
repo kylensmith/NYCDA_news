@@ -4,6 +4,38 @@ body {
 .body {
 	background-color: #525564;
 }
+.blue_bold {
+	font-weight: bold;
+	color: #96C0CE;
+	font-size: 1em;
+}
+.main_image {
+	width: 100%;
+	opacity: 0.8;
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
+#sign_in_header {
+	height: 70px;
+	background-color: #525564;
+	padding-top: 6px;
+}
+#user {
+	width: 95%;
+}
+#current_user_name {
+	float: left;
+	margin-top: 40px;
+	font-size: 1.5em;
+	background-color: rgba(244, 244, 244, 0.5);
+}
+.welcome {
+	float: right;
+	list-style-type: none;
+	text-transform: uppercase;
+}
 #logo {
 	margin-left: 10px;
 	/*border: 2px solid black;*/
@@ -13,24 +45,25 @@ body {
 header {
 	background-color: #ffffff;
 	height: 110px;
-	background-color: lightgray;
+	background-color: rgba(244, 244, 244, 0.8);
 }
 nav {
 	float: right;
 	margin-right: 25px;
 }
 .topics_nav {
-	border: 3px solid #ffffff;
+	border: 2px solid #ffffff;
+	border-radius: 10px;
 	float: right;
 	list-style-type: none;
 	text-transform: uppercase;
 	margin: 8px;
-	margin-top: 80px;
+	margin-top: 60px;
 	font-size: 14px;
 	letter-spacing: 0.15em;
 	font-size: 1.1em;
 	font-weight: bold;
-	background-color: #ffffff;
+	background-color: #525564;
 	padding: 2px 6px;
 }
 
@@ -44,7 +77,8 @@ a:hover {
 .user_login, .user_logout {
 	list-style-type: none;
 	text-transform: uppercase;
-	font-size: 0.8em;
+	font-size: 0.9em;
+	text-align: right;
 }
 #sign_in_form {
 	background-color: #74828F;
@@ -53,17 +87,13 @@ a:hover {
 	box-shadow: 0px 0px 10px #888888;
 	color: #ffffff;
 }
-#join_today {
-	width: 40%;
-	float: left;
-}
 .body {
 	/*background-color: #525564;*/
 }
 .container {
-	/*background-color: #525564;*/
-	padding: 10px;
-	height: 100%;
+	background-color: #525564;
+	margin-top: 35%;
+	width: 100%;
 }
 .footer {
 	clear: both;
@@ -74,14 +104,42 @@ a:hover {
 	text-align: right;
 	padding: 4px;
 }
+/*subscribers#new*/
+#join_today {
+	width: 40%;
+	float: left;
+	margin-left: 5%;
+	margin-top: 20px;
+	padding: 10px;
+	text-align: center;
+	background-color: rgba(150, 192, 206, 0.5);
+}
+#join_title {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.general_text {
+	font-size: 0.6em;
+}
 #sign_up_form {
-	border: 2px solid black;
-	width: 25%;
+	border: 2px solid #525564;
+	width: 20%;
 	font-size: 1em;
 	text-transform: uppercase;
-	background-color: #FEF6EB;
+	background-color: rgba(254, 246, 235, 0.8);
 	color: #525564;
 	float: left;
+	padding: 25px 75px 25px 25px;
+	box-shadow: 0px 0px 10px #888888;
+	margin-left: 10%;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+#sign_up_title {
+	margin-top: 25px;
+	float: right;
+	margin-right: 26%;
+	font-size: 1.5em;
+	color: #ffffff;
 }
 .button {
 	color: #C25B56;
@@ -93,7 +151,6 @@ a:hover {
 	background-color: #525564;
 	float: left;
 	width: 75%;
-	margin-top: 20px;
 }
 #article-0-picture, #article-1-picture, #article-2-picture, #article-3-picture, #article-4-picture{
 	border: 5px solid #ffffff;
@@ -162,7 +219,8 @@ h3 {
 	border: 4px solid green;
 }
 .topic-page-heading {
-	
+	font-size: 2em;
+	text-align: center;
 }
 .topics_body {
 	width: 1100px;

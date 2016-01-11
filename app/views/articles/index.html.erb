@@ -1,10 +1,11 @@
-
-
 <!-- This is the main news section for the website where it will display the five most recent articles from any category.  This will list the story title and the main picture taged with the page.     -->
 
 <!-- Note: each article is wrapped in a div with a uniqe number where the number is the instance 0-4. -->
-
+<div id="main_image">
+	<%= image_tag("/assets/code.jpg", class: "main_image") %>
+<div>
 <div class="container">
+	<h1 class"topic-page-heading">Today's Headlines</h1>
 	<div class="main_article">
 
 		<%(0..4).each do |i| %>
@@ -13,10 +14,8 @@
 			<%= content_tag :div, id: "article-#{i}-title" do %>
 			<%=link_to((@story[i].title), (article_path(@story[i].id))) %>
 			<%end%>
-
 		
 			<%= image_tag("/assets/#{@story[i].image_url}", id: "article-#{i}-picture")%>
-			
 			
 			<%end%>
 		<% end %>
