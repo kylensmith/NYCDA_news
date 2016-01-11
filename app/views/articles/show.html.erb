@@ -24,9 +24,9 @@
 
 
 
-
-<%= content_tag :div, @article.body, id: "article-body"%> 
-
+<div id: "article-body">
+	<%= simple_format @article.body%> 
+</div>
 <%end%>
 
 
@@ -36,13 +36,13 @@ if current user is logged in:
 
 <%if session[:subscriber_id] %>
 Anything you'd like to add?  
-	<%= form_tag "/comments", method: "post" do %>   
-	<%=label_tag :feedback %>   
-	<%=text_field_tag :feedback %> 
-	<%= hidden_field_tag :article_id, @article.id %>
-  Form contents
-	<%=submit_tag "Let your voice be heard." %> 
-	<% end %>
+<%= form_tag "/comments", method: "post" do %>   
+<%=label_tag :feedback %>   
+<%=text_field_tag :feedback %> 
+<%= hidden_field_tag :article_id, @article.id %>
+Form contents
+<%=submit_tag "Let your voice be heard." %> 
+<% end %>
 
 <%else%>
 We would love to hear your thoughts on this article.  Please log in to post a comment.
@@ -55,18 +55,18 @@ We would love to hear your thoughts on this article.  Please log in to post a co
 <!-- This is a list of comments -->
 <div id="comment-wrap">
 	<% @comment.last(10).reverse.each do |w|%> 
-<div id="comment-name">	
-<%= w.subscriber.fname%> <%= w.subscriber.lname%> 
-</div>
-<div id="comment-city">(<%= w.subscriber.city%>, <%= w.subscriber.state%>)
-</div>
-<div id="comment-feedback">
-<%= w.feedback%>
-</div>
+	<div id="comment-name">	
+		<%= w.subscriber.fname%> <%= w.subscriber.lname%> 
+	</div>
+	<div id="comment-city">(<%= w.subscriber.city%>, <%= w.subscriber.state%>)
+	</div>
+	<div id="comment-feedback">
+		<%= w.feedback%>
+	</div>
 
-<div id="comment-date">
-<%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
-</div>	
+	<div id="comment-date">
+		<%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
+	</div>	
 	<% end%>
 </div>
 

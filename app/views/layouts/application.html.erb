@@ -12,7 +12,7 @@
 		<nav id="user">
 			<%if session[:subscriber_id] %>
 				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>!
+					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>
 						<div class="form">
 							<%= link_to 'Account', (subscriber_path(@current_subscriber)) %>
 							</div>

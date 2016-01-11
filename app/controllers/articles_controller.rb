@@ -62,7 +62,7 @@ class ArticlesController < ApplicationController
   
   @a = params[:id]
     Article.destroy(@a)
-    redirect_to staffs_path current_user
+    redirect_to (:back)
   end
 
   private   

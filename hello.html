@@ -2,3 +2,8 @@ KNS Issues...
 
 When creating a article it doesn't capture the staff session id so that we can populate the name of the person that wrote the article.
 
+
+
+
+
+<%= button_to "- Unfriend", {:controller => "articles", :action => 'destroy', :id => w.id}, :confirm => "Are you sure you want to unfriend #{user.username}?", :method => :delete %>
