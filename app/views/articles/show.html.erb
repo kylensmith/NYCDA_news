@@ -1,11 +1,10 @@
 <%= content_tag :div, id: "article-show-wrap" do %>
 
 
+<%= image_tag("/assets/#{@article.image_url}", id: "article-picture")%>
+
+
 <%= content_tag :div, @article.title, class: "article-title"%> 
-
-
-
-
 
 
 
@@ -46,32 +45,29 @@ Anything you'd like to add?
 	<% end %>
 
 <%else%>
-You must be logged in to post to the forum.  If you would like to post, please login here.
+We would love to hear your thoughts on this article.  Please log in to post a comment.
 <%end%>
 
 
-<br>
-<br>
-<br>
-<br>
+
+
 
 <!-- This is a list of comments -->
-	<% @comment.each do |w|%> 
-	
-<%= w.subscriber.fname%> <%= w.subscriber.lname%> (<%= w.subscriber.city%>, <%= w.subscriber.state%>)
-<br>
+<div id="comment-wrap">
+	<% @comment.last(10).reverse.each do |w|%> 
+<div id="comment-name">	
+<%= w.subscriber.fname%> <%= w.subscriber.lname%> 
+</div>
+<div id="comment-city">(<%= w.subscriber.city%>, <%= w.subscriber.state%>)
+</div>
+<div id="comment-feedback">
 <%= w.feedback%>
+</div>
 
-<br>
-
+<div id="comment-date">
 <%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
-
-<br>
-<br>
-	
-	
-
+</div>	
 	<% end%>
-
+</div>
 
 

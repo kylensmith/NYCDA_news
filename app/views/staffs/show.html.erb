@@ -1,2 +1,38 @@
-<h1>Staffs#show</h1>
-<p>Find me in app/views/staffs/show.html.erb</p>
+<h1><%= @staff.fname%> <%= @staff.lname%> </h1> 
+<h4><%= @staff.job_title%> </h4>
+ <%= @staff.email%>
+ <br>
+
+
+ List of articles published on this site:
+
+
+ <div id="works-list">
+ 	<table border="1" width="900px">
+ 		<tr>
+ 			<td width="200"><b>Article Name</b></td>
+ 			<td width="60"><b>Date Published</b></td>
+ 			<td width="20"><b>Article Comments</b></td>
+ 			<%if @staff == @current_staff%>
+ 			<td width="20"><b>Delete?</b></td>
+ 			<%end%>
+
+ 		</tr>
+ 		<% @article.reverse.each do |w|%> 
+ 		<tr>
+ 			<td><%=link_to w.title, article_path(w.id) %></td>
+ 			<td><%= w.created_at.strftime('%B %d, %Y  %I:%M %p')%> </td>
+
+ 			<td  style="text-align:center"><%= Comment.where(article_id: w).count%></td>
+ 			<%if @staff == @current_staff%>
+ 			<td width="20"><%= link_to 'Remove',  { action: :destroy, id: w.id }, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+
+ 			<%end%>
+ 		</tr>
+
+
+
+ 		<% end%>
+ 	</table>
+ </div>

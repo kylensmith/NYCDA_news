@@ -30,6 +30,8 @@ class StaffsController < ApplicationController
   def show
     @current_subscriber = current_subscriber
     @current_staff = current_staff
+    @article = Article.where(staff_id: params[:id])
+    @staff = Staff.find(params[:id])
   end
 
   def destroy

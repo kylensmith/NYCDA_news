@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
  def index
     @subscribers = Subscriber.all
     @current_subscriber = current_subscriber
-
+@current_staff = current_staff
   end
 
   def new

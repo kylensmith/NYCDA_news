@@ -11,14 +11,33 @@ Please click here to post an article
 <!-- This loop will list all of the current members of the department staffs -->
 
 <strong>List of current staff.</strong>
-<br>
-Job Title, Name, Email <br>
-<% @staff.each do |x| %>
-<%= x.job_title%> <%= x.fname%> <%= x.lname%>, <%= x.email%>   <%= link_to "delete", staff_path(x.id), method: :delete%>
 
-<br>
 
-<%end%>
+
+<div id="staff-list">
+ 	<table border="1">
+ 		<tr>
+ 			<td width="60"><b>Possition</b></td>
+ 			<td width="130"><b>Name </b></td>
+ 			<td width="50"><b>Email</b></td>
+ 		</tr>
+
+ 		<% @staff.each do |x| %> 
+ 		<tr>
+ 			<td><%= x.job_title%></td>
+
+ 			<td><%=link_to x.fname, staff_path(x.id) %></td>
+ 			<td><%= x.email%></td>
+
+
+
+ 			
+ 		</tr>
+ 		<% end%>
+ 	</table>
+
+
+
 <br><br><br><br><br>
 
 <%= form_tag "/login", method: "post" do %>   

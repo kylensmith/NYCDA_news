@@ -23,7 +23,7 @@
 				</div>
 			<%elsif session[:staff_id] %>
 				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>!
+					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>
 						<div class="form">
 							<%= link_to 'View your account', (staff_path(@current_staff)) %>
 							</div>
