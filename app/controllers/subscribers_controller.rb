@@ -32,6 +32,8 @@ class SubscribersController < ApplicationController
     @current_subscriber = current_subscriber
     @current_staff = current_staff
     @comment = Comment.where(subscriber_id: params[:id])
+    @subscriber = Subscriber.find(params[:id])
+     @sub = params[:id]
   end
 
   def destroy
@@ -43,6 +45,7 @@ class SubscribersController < ApplicationController
 
 # this provdes additional security by only allowing the permitted variables to be accessed and changed.
 
+  
   def subscriber_params
     params.require(:subscriber).permit(:id, :fname, :lname, :email, :password, :city, :state)
   end

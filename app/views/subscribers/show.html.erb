@@ -1,14 +1,18 @@
-<h1>Subscribers#show</h1>
-<p>Find me in app/views/subscribers/show.html.erb</p>
+
+
+<%if @subscriber == @current_subscriber%>
+
+<h1><%= @current_subscriber.fname%> <%= @current_subscriber.lname%></h1> <%= @current_subscriber.email%>
+<p>Your comments to articles:</p>
 
 
 <div id="works-list">
  	<table border="1" width="900px">
  		<tr>
- 			<td width="200"><b>Article</b></td>
- 			<td width="20"><b>Author</b></td>
- 			<td width="60"><b>Comment</b></td>
- 			<td width="20"><b>Posted</b></td>
+ 			<td width="270"><b>Article</b></td>
+ 			<td width="100"><b>Author</b></td>
+ 			<td width="200"><b>Comment</b></td>
+ 			<td width="200"><b>Posted</b></td>
  			<%if @subscriber == @current_subscriber%>
  			<td width="20"><b>Delete?</b></td>
  			<%end%>
@@ -22,15 +26,11 @@
 
 			<td><%= w.created_at.strftime('%B %d, %Y  %I:%M %p')%> </td>
 
-
+			<td width="20"><%= link_to 'Remove',  {:controller => "comments", :action => 'destroy', :id => w.id}, :confirm => "Are you sure you want to delete this article?", :method => :delete %></td>
 
 
  			
- 			<%if @subscriber == @current_subscriber%>
- 			<td width="20"></td>
-
-
- 			<%end%>
+ 			
  		</tr>
 
 
@@ -38,3 +38,14 @@
  		<% end%>
  	</table>
  </div>
+
+
+
+<%else%>
+
+You do not have permission to access this page.
+
+<%end%>
+
+
+ 

@@ -3,6 +3,7 @@ class StaffsController < ApplicationController
     @staff = Staff.all
     @current_subscriber = current_subscriber
     @current_staff = current_staff
+    
   end
 
   def new

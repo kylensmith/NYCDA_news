@@ -28,9 +28,10 @@ class CommentsController < ApplicationController
  
 
   def destroy
-    comment = Comment.find(params[:id])
-    comment.destroy
-    redirect_to (:back)
+    @a = params[:id]
+  association = Comment.where(id: @a)
+  association.delete_all
+  redirect_to (:back)
 
   end
 
