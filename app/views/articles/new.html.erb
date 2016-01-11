@@ -3,16 +3,16 @@
 
 
 <!-- This will only show the form if the client is a logged in staff member. -->
-<% if session[:staff_id]%>
+<% if @current_staff%>
 	<!-- This is a form used to create a new article from a member of the staff. -->
 	<%= form_for @articles do |f| %>   
 	<%=f.label :title %>   
-	<%=f.text_field :title %> 
-	<%=f.label :body %>   
-	<%=f.text_field :body %>  
+	<%=f.text_field :title %> <br><br>
+	<%=f.label :body %>   <br>
+	<%=f.text_field :body %>  <br><br>
 	<%=f.label :image_url %>   
-	<%=f.text_field :image_url %>  
-		<%=f.session[:staff_id]%>
+	<%=f.text_field :image_url %>  <br><br>
+		<%=f.hidden_field :staff_id, :value => @current_staff.id%>
 
 	<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
 	    <% @topic.each do |z| %>

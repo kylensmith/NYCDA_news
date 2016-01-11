@@ -15,24 +15,29 @@ class ArticlesController < ApplicationController
   def new
     @articles = Article.new
     @topic = Topic.all
-
+@current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
 
   def create
-    topics =  params[:topics]
-    @article = Article.create(article_params)
-    @article.staff = current_staff
-    @article.save
+   @topic = Topic.all
+   topics =  params[:topics]
+   @article = Article.create(article_params)
+   @article.staff = current_staff
+   @article.save
+   @current_subscriber = current_subscriber
+   @current_staff = current_staff
 
-    topics.each do |t|
+     topics.each do |t|
       @article.topics.push(Topic.find(t))
+
     end
 
     # if @articles.save
     #   flash[:notice] = "Your account has been created."
     
-    redirect_to staff_path @article
+    redirect_to (:back)
     # else
     #   flash[:alert] = "There was a problem saving your account."
     #   redirect_to articles_path_new
@@ -41,14 +46,19 @@ class ArticlesController < ApplicationController
 
   def categorize
     @join = Article_topics.create() 
-  
+  @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def edit
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
 
   end
 
   def update
+    @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def show
@@ -61,7 +71,12 @@ class ArticlesController < ApplicationController
   def destroy
   
   @a = params[:id]
-    Article.destroy(@a)
+  association = ArticleTopic.where(article_id: @a)
+  association.delete_all
+
+    target = Article.find_by_id(@a)
+    target.destroy
+    
     redirect_to (:back)
   end
 

@@ -22,4 +22,9 @@ def current_staff
   end
 end
 
+def layout
+  @current_subscriber = current_subscriber
+    @current_staff = current_staff
+  end
+
 end

@@ -1,2 +1,40 @@
 <h1>Subscribers#show</h1>
 <p>Find me in app/views/subscribers/show.html.erb</p>
+
+
+<div id="works-list">
+ 	<table border="1" width="900px">
+ 		<tr>
+ 			<td width="200"><b>Article</b></td>
+ 			<td width="20"><b>Author</b></td>
+ 			<td width="60"><b>Comment</b></td>
+ 			<td width="20"><b>Posted</b></td>
+ 			<%if @subscriber == @current_subscriber%>
+ 			<td width="20"><b>Delete?</b></td>
+ 			<%end%>
+
+ 		</tr>
+			<% @comment.reverse.each do |w|%> 
+			<tr>
+			<td><%=link_to w.article.title, article_path(w.article.id) %></td>
+			<td><%=w.article.staff.fname[0]%>. <%=w.article.staff.lname%></td>
+			<td><%= w.feedback%> </td>
+
+			<td><%= w.created_at.strftime('%B %d, %Y  %I:%M %p')%> </td>
+
+
+
+
+ 			
+ 			<%if @subscriber == @current_subscriber%>
+ 			<td width="20"></td>
+
+
+ 			<%end%>
+ 		</tr>
+
+
+
+ 		<% end%>
+ 	</table>
+ </div>

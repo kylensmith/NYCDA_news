@@ -3,7 +3,7 @@ class SubscribersController < ApplicationController
  def index
     @subscribers = Subscriber.all
     @current_subscriber = current_subscriber
-@current_staff = current_staff
+    @current_staff = current_staff
   end
 
   def new
@@ -31,6 +31,7 @@ class SubscribersController < ApplicationController
   def show
     @current_subscriber = current_subscriber
     @current_staff = current_staff
+    @comment = Comment.where(subscriber_id: params[:id])
   end
 
   def destroy

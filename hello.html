@@ -7,3 +7,42 @@ When creating a article it doesn't capture the staff session id so that we can p
 
 
 <%= button_to "- Unfriend", {:controller => "articles", :action => 'destroy', :id => w.id}, :confirm => "Are you sure you want to unfriend #{user.username}?", :method => :delete %>
+
+
+
+
+<table border="1" width="900px">
+ 		<tr>
+ 			<td width="200"><b>Article Name</b></td>
+ 			<td width="60"><b>Date Published</b></td>
+ 			<td width="20"><b>Article Comments</b></td>
+ 			<td width="20"><b>Category</b></td>
+ 			<%if @staff == @current_staff%>
+ 			<td width="20"><b>Delete?</b></td>
+ 			<%end%>
+
+ 		</tr>
+ 		<% @article.reverse.each do |w|%> 
+ 		<tr>
+ 			<td><%=link_to w.title, article_path(w.id) %></td>
+ 			<td><%= w.created_at.strftime('%B %d, %Y  %I:%M %p')%> </td>
+
+ 			<td  style="text-align:center"><%= Comment.where(article_id: w).count%></td>
+<td>
+<% w.topics.each do |t| %>
+<%= t.category %>
+<% end %>
+</td>
+
+
+ 			<%if @staff == @current_staff%>
+ 			<td width="20"><%= link_to 'Remove',  {:controller => "articles", :action => 'destroy', :id => w.id}, :confirm => "Are you sure you want to delete this article?", :method => :delete %></td>
+
+
+ 			<%end%>
+ 		</tr>
+
+
+
+ 		<% end%>
+ 	</table>
