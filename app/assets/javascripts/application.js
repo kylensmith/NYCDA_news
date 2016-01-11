@@ -14,3 +14,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// topic nav buttons interactive
+
+// $(document).ready(function(){ 
+// 	$('.topics_nav').mouseenter(function() {
+// 		$('.topics_nav').css("background-color", "#C25B56");
+// 	});
+// 	$('.topics_nav').mouseleave(function() {
+// 		$('.topics_nav').css("background-color", "#525564");
+// 	});
+
+// });

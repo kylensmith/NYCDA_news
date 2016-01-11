@@ -1,51 +1,65 @@
-<%= content_tag :div, id: "article-show-wrap" do %>
+<div class="article_view">
+	<%= content_tag :div, id: "article-show-wrap" do %>
+	<%= image_tag("/assets/#{@article.image_url}", id: "article-picture")%>
+
+	<%= content_tag :div, @article.title, class: "article-title"%>
+
+	<%= content_tag :div, @article.created_at.strftime('%A, %B %d, %Y'), id: "article-date"%> 
+
+	<% @article.topics.each do |t| %>
+	<%= content_tag :div, id: "article-category" do %>
+	<%= t.category %>
+	<% end %>
+	<% end %>
+
+	<%= content_tag :div, id: "article-author" do -%>
+	<%=@article.staff.fname%> <%=@article.staff.lname%>, <%=@article.staff.job_title%>
+	<%end%>
+
+	<%= content_tag :div, @article.body, id: "article-body"%> 
 
 
-<%= image_tag("/assets/#{@article.image_url}", id: "article-picture")%>
+	<%end%>
+	<div class="comments_view">
 
 
-<%= content_tag :div, @article.title, class: "article-title"%> 
+		<%if session[:subscriber_id] %>
+		<h4 id="comment-header">Anything you'd like to add <span class="blue_bold"><%= @current_subscriber.fname%></span>?</h4>
+		<div class="form">
+			<%= form_tag "/comments", method: "post" do %>   
+			<%=label_tag :feedback %>   
+			<%=text_field_tag :feedback %> 
+			<%= hidden_field_tag :article_id, @article.id %>
+			<br>
+			<div class="button"><%=submit_tag "Let your voice be heard." %></div>
+			<% end %>
+		</div>
 
-
-
-
-<%= content_tag :div, @article.created_at.strftime('%A, %B %d, %Y'), id: "article-date"%> 
-
-<% @article.topics.each do |t| %>
-<%= content_tag :div, id: "article-category" do %>
-<%= t.category %>
-<% end %>
-<% end %>
-
-<%= content_tag :div, id: "article-author" do -%>
-<%=@article.staff.fname%> <%=@article.staff.lname%>, <%=@article.staff.job_title%>
-<%end%>
-
+		<%else%>
+		We would love to hear your thoughts on this article.  Please <span class="user_login"><%= link_to 'Sign Up', new_subscriber_path %></span> to post a comment.
 
 
 
-<div id: "article-body">
-	<%= simple_format @article.body%> 
+		<%end%>
+	</div>
 </div>
-<%end%>
-
-
-
-
-<%if session[:subscriber_id] %>
-Anything you'd like to add?  
-<%= form_tag "/comments", method: "post" do %>   
-<%=label_tag :feedback %>   
-<%=text_field_tag :feedback %> 
-<%= hidden_field_tag :article_id, @article.id %>
-Form contents
-<%=submit_tag "Let your voice be heard." %> 
-<% end %>
-
-<%else%>
-We would love to hear your thoughts on this article.  Please log in to post a comment.
-<%end%>
-
+<div class="comments_feed">
+	<h2 id="recent-comments-header">Recent Comments</h2>
+	<!-- This is a list of comments -->
+	<div id="comment-wrap">
+		<% @comment.last(10).reverse.each do |w|%> 
+		<span class="comment-name"><%= w.subscriber.fname%> <%= w.subscriber.lname%>
+		</span>
+		<span class="comment-city">| (<%= w.subscriber.city%>, <%= w.subscriber.state%>)
+		</span>
+		<br>
+		<span class="comment-feedback"><%= w.feedback%></span>
+		<span id="comment-date">
+			<%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
+		</span>	
+		<% end%>
+	</div>
+</div>
 
 
 
@@ -67,5 +81,6 @@ We would love to hear your thoughts on this article.  Please log in to post a co
 	</div>	
 	<% end%>
 </div>
+
 
 

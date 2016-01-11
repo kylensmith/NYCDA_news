@@ -1,9 +1,13 @@
+<div id="main_image">
+	<%= image_tag("/assets/join_subscribers.jpg", class: "main_image") %>
+<div>
 <div class="container">
 	<div id="join_today">
-		<h1>Join NYCDA News Today!<h1>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti dolorum repellat at nulla tempore numquam minus error, impedit laborum pariatur, delectus odio, perferendis quas reprehenderit amet. Commodi, enim dolorem.</p>
+		<h1 id="join_title">Join NYCDA News Today!<h1>
+		<p class="general_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti dolorum repellat at nulla tempore numquam minus error, impedit laborum pariatur, delectus odio, perferendis quas reprehenderit amet. Commodi, enim dolorem.</p>
+		<p class="general_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium corrupti dolorum repellat at nulla tempore numquam minus error, impedit laborum pariatur, delectus odio, perferendis quas reprehenderit amet. Commodi, enim dolorem.</p>
 	</div>
-		<h3>Sign Up</h3>
+		<h3 id="sign_up_title">Sign Up</h3>
 		<div id="sign_up_form" class="form">
 			<%= form_for @subscriber do |f| %>   
 			<%=f.label :First_Name %>   
@@ -28,5 +32,4 @@
 			<% end %>
 		</div>
 	</div>
-	<%= image_tag("/assets/join_subscribers.jpg") %>
 </div>

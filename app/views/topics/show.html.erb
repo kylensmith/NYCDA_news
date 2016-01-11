@@ -1,6 +1,6 @@
 <div class="topics_body">
 	<!-- This is the title for the section. -->
-	<h2 class="topic-page-heading"><%= content_tag :div, @topic.category, class: "topic-category"%></h2>
+	<h1 class="topic-page-heading"><%= content_tag :div, @topic.category, class: "topic-category"%></h1>
 
 	<!-- Loop through this @topic's eight most recent articles -->
 
@@ -8,10 +8,15 @@
 
 		<%= content_tag :div, class: "topic-article" do -%>
 			<h2><%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %></h2>
-			<div class="topics-photo"><%=link_to(image_tag((Article.find(a.article_id).image_url)), (article_path(a.article_id))) %></div>
+			
 
+				<%= image_tag((Article.find(a.article_id).image_url), class: "topics_photo")%>
+
+			
 		<% end %>
-	<br>
+	<!-- <br> -->
 	<% end %>
 </div>
+
+
 

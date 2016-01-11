@@ -7,64 +7,53 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-		<%= link_to image_tag("nycda_logo_1.png", id: "logo"),root_path %>
+	<div id="sign_in_header">
 		<nav id="user">
 			<%if session[:subscriber_id] %>
-				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>
-						<div class="form">
-							<%= link_to 'Account', (subscriber_path(@current_subscriber)) %>
-							</div>
-							<div class="form">
-							<%= link_to 'Log Out', logout_path, method: :delete %>
-						</div>
-					</li>
+
+				<div class="welcome_form">
+					<li id="current_user_name" class="welcome">Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>!</li>
+					<li class="welcome"><%= link_to 'Account', (subscriber_path(@current_subscriber)) %></li>
+					<br>
+					<li class="welcome"><%= link_to 'Log Out', logout_path, method: :delete %></li>
+
 				</div>
 			<%elsif session[:staff_id] %>
-				<div id="sign_in_form">
-					<li class="user_login">  Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>
-						<div class="form">
-							<%= link_to 'View your account', (staff_path(@current_staff)) %>
-							</div>
-							<div class="form">
-							<%= link_to 'Log Out', logout_path, method: :delete %>
-						</div>
-					</li>
+				<div class="welcome_form">
+					<li id="current_user_name" class="welcome">Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>!</li>
+					<li class="welcome"><%= link_to 'View your account', (staff_path(@current_staff)) %></li>
+					<br>
+					<li class="welcome"><%= link_to 'Log Out', logout_path, method: :delete %></li>
 				</div>
 			<%else%>
-				<div class="form">
-				<li><%= link_to 'Sign Up', new_subscriber_path %></li>
-				<div id="sign_in_form">
-				<li class="user_login">
+				<div id="user_login">
+					<li class="user_login"><%= link_to 'Sign Up', new_subscriber_path %></li>
 					<div class="form">
 						<%= form_tag '/login', method: :post do %>
 							<%= label_tag :email %>
 							<%= email_field_tag :email %>
-							<br>
 							<%= label_tag :password %>
 							<%= password_field_tag :password %>
 							<div class="button"><%= submit_tag "Log In" %></div>
 						<% end %>
 					</div>
-				</li>
-			</div>
-
+				</div>
 			<%end%>
-
 		</nav>
-
+	</div>
+	<header id="main_menu">
 		<nav id="topics">
+			<%= link_to image_tag("nycda_logo_1.png", id: "logo"),root_path %>
 			<% @topics.each do |topic| %>
 			<li class="topics_nav"><%= link_to (topic.category), (topic_path(topic.id)) %></li>
 			<% end %>
 		</nav>
 	</header>
-	<div class="container">
-	<%= yield %>
+	<div>
+	   <%= yield %>
 	</div>
 	<div class="footer">
-		There is a link to staff here==><%=link_to "Staff", staffs_path %><==here
+		<%=link_to "Staff", staffs_path %>
 	</div>
 </body>
 </html>
