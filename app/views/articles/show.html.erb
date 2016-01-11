@@ -64,23 +64,3 @@
 
 
 
-<!-- This is a list of comments -->
-<div id="comment-wrap">
-	<% @comment.last(10).reverse.each do |w|%> 
-	<div id="comment-name">	
-		<%= w.subscriber.fname%> <%= w.subscriber.lname%> 
-	</div>
-	<div id="comment-city">(<%= w.subscriber.city%>, <%= w.subscriber.state%>)
-	</div>
-	<div id="comment-feedback">
-		<%= w.feedback%>
-	</div>
-
-	<div id="comment-date">
-		<%= content_tag :div, w.created_at.strftime('%A, %B %d, %Y  %I:%M %p'), id: "comment-date"%> 
-	</div>	
-	<% end%>
-</div>
-
-
-
