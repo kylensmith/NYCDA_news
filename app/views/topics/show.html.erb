@@ -4,18 +4,21 @@
 
 	<!-- Loop through this @topic's eight most recent articles -->
 
-	<% @revelant_articles.last(8).reverse.each do |a| %>
+	<div id="topics_body_feed">
 
-		<%= content_tag :div, class: "topic-article" do -%>
-			<h2><%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %></h2>
-			
+		<% @revelant_articles.last(8).reverse.each do |a| %>
 
-				<%= image_tag((Article.find(a.article_id).image_url), class: "topics_photo")%>
+			<%= content_tag :div, class: "topic-article" do -%>
+				<h2><%=link_to((Article.find(a.article_id).title), (article_path(a.article_id))) %></h2>
+				
 
-			
+					<%= image_tag((Article.find(a.article_id).image_url), class: "topics_photo")%>
+
+				
+			<% end %>
+		<!-- <br> -->
 		<% end %>
-	<!-- <br> -->
-	<% end %>
+	</div>
 </div>
 
 
