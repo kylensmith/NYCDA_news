@@ -1,34 +1,35 @@
-<h1>Publish a new article</h1>
-<p>Note: All images must be approved and uploaded by the Images Manager.</p>
+
+<h1 class="topic-page-heading">New Article</h1>
+<div id="new_article">
+	<!-- This will only show the form if the client is a logged in staff member. -->
+	<% if @current_staff%>
+		<!-- This is a form used to create a new article from a member of the staff. -->
+		<%= form_for @articles do |f| %>   
+		<%=f.label :title %>   
+		<%=f.text_field :title %> <br><br>
+		<%=f.label :body %>   <br>
+		<%=f.text_field :body %>  <br><br>
+		<%=f.label :image_url %>   
+		<%=f.text_field :image_url %>  <br><br>
+			<%=f.hidden_field :staff_id, :value => @current_staff.id%>
+
+		<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
+		    <% @topic.each do |z| %>
+		    
+		    <br>
+		    <%=check_box_tag 'topics[]', z.id %> 
+		    <%=label_tag z.category%>
+		    <%end%>
+
+		<br><br>	
+		<%=f.submit :create %> 
+		<% end %>
 
 
-<!-- This will only show the form if the client is a logged in staff member. -->
-<% if @current_staff%>
-	<!-- This is a form used to create a new article from a member of the staff. -->
-	<%= form_for @articles do |f| %>   
-	<%=f.label :title %>   
-	<%=f.text_field :title %> <br><br>
-	<%=f.label :body %>   <br>
-	<%=f.text_field :body %>  <br><br>
-	<%=f.label :image_url %>   
-	<%=f.text_field :image_url %>  <br><br>
-		<%=f.hidden_field :staff_id, :value => @current_staff.id%>
-
-	<!-- this loop is nested inside of the form and will give the different categories that an article may fall into. -->
-	    <% @topic.each do |z| %>
-	    
-	    <br>
-	    <%=check_box_tag 'topics[]', z.id %> 
-	    <%=label_tag z.category%>
-	    <%end%>
-
-		
-	<%=f.submit :create %> 
-	<% end %>
+	<%else%>
+	Sorry, you do not have permissions to access this page.
 
 
-<%else%>
-You do not have permissions to access this page.
+	<%end%>
+</div>
 
-
-<%end%>
