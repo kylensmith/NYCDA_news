@@ -74,8 +74,8 @@ class ArticlesController < ApplicationController
   association = ArticleTopic.where(article_id: @a)
   association.delete_all
 
-    target = Article.find_by_id(@a)
-    target.destroy
+  target = Article.find_by_id(@a)
+  target.destroy
     
     redirect_to (:back)
   end

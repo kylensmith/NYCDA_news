@@ -8,6 +8,8 @@ class SubscribersController < ApplicationController
 
   def new
     @subscriber = Subscriber.new
+     @current_subscriber = current_subscriber
+    @current_staff = current_staff
   end
 
   def create

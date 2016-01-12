@@ -1,5 +1,5 @@
-<h1>Subscribers#index</h1>
-<p>Find me in app/views/subscribers/index.html.erb</p>
+<h1>NYCDA NEWS Subscribers</h1>
+
 
 List of subscribers with onlines feedback accounts.
 <br>
@@ -8,10 +8,3 @@ List of subscribers with onlines feedback accounts.
 <%= x.fname[0]%>. <%= x.lname%>, <%= x.city%>, <%= x.state%> <br>
 <%end%>
 
-<%= form_tag "/subscriber-login", method: "post" do %>   
-<%=label_tag :email %>   
-<%=text_field_tag :email %> 
-<%=label_tag :password %>   
-<%=password_field_tag :password %>  
-<%=submit_tag "Login" %> 
-<% end %>

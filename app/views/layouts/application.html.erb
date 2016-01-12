@@ -9,7 +9,7 @@
 <body>
 	<div id="sign_in_header">
 		<nav id="user">
-			<%if session[:subscriber_id] %>
+			<%if @current_subscriber %>
 
 				<div class="welcome_form">
 					<li id="current_user_name" class="welcome">Welcome, <%= @current_subscriber.fname%> <%= @current_subscriber.lname%>!</li>
@@ -18,7 +18,7 @@
 					<li class="welcome"><%= link_to 'Log Out', logout_path, method: :delete %></li>
 
 				</div>
-			<%elsif session[:staff_id] %>
+			<%elsif @current_staff %>
 				<div class="welcome_form">
 					<li id="current_user_name" class="welcome">Welcome, <%= @current_staff.fname%> <%= @current_staff.lname%>!</li>
 					<li class="welcome"><%= link_to 'View your account', (staff_path(@current_staff)) %></li>
