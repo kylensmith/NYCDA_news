@@ -61,7 +61,7 @@ Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium re
 \n 
 Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
 \n 
-Mei apeirian consequat eu. At qui tollit equidem. Ne mutat ullamcorper suscipiantur pro, qui quas noster no. Alia oportere eam ne.", image_url: "sports.jpg", staff_id: 7)
+Mei apeirian consequat eu. At qui tollit equidem. Ne mutat ullamcorper suscipiantur pro, qui quas noster no. Alia oportere eam ne.", image_url: "stadium.jpg", staff_id: 7)
 ge.topics.push(sports)
 
 
@@ -173,7 +173,7 @@ scripserit cu. Ad justo soluta pro, posse praesent quo te, nec brute virtute hen
 Qui at virtute phaedrum maluisset, vis noster evertitur eu, eu quo posidonium referrentur. Vis ut iudico expetendis, vim alterum inimicus ea. Nam ut esse dolor prodesset. Eum ad autem appareat. Et dictas nostrud vituperata mel, cu odio munere invenire ius. Ornatus iudicabit an mel.\n
 
 Ea reque nobis verterem vim, oratio liberavisse ne has. Modus tollit dissentias ius ad, usu utinam omittantur ut, adhuc vituperatoribus quo te. Ex has utinam persius scripserit, ea mel tantas persequeris. Vim nisl lobortis nominati id, enim nulla instructior mel ne, soleat mentitum scripserit eu his. Velit prodesset id pro. Usu et perpetua facilisis.\n
-", image_url: "business.jpg", staff_id: 6)
+", image_url: "business2.jpg", staff_id: 6)
 i.topics.push(biz)
 
 dp = Article.create(title: "Leash & Collar loses ten dogs in a major leash entanglement", body: "Ad justo soluta pro, posse praesent quo te, nec brute virtute hendrerit at. Dico alienum convenire cu qui, et epicurei tincidunt pro, postea volumus nam id. Inani prompta id sea. Usu illud adversarium ut. Eu possit temporibus sed. Simul adipiscing an cum, usu habeo modus periculis in, ad liber intellegam nam. Volumus adipisci scribentur per eu, duo id efficiendi signiferumque, sea ne aliquam iudicabit disputationi.\n
