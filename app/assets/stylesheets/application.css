@@ -1,3 +1,5 @@
+/*overall styling*/
+
 body {
 	font-family: helvetica;
 	background-color: #74828F;
@@ -10,14 +12,30 @@ body {
 	color: #96C0CE;
 	font-size: 1em;
 }
-.main_image {
-	width: 100%;
-	opacity: 0.8;
-	position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
+a:link, a:visited { 
+	color: #96C0CE;
+	text-decoration: none;
 }
+a:hover {
+	color: #C25B56;
+}
+.container {
+	background-color: #525564;
+	margin-top: 22.5%;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+.container_home {
+	background-color: #525564;
+	margin-top: 35%;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+/*header*/
+
 #sign_in_header {
 	height: 70px;
 	background-color: #525564;
@@ -31,6 +49,7 @@ body {
 	margin-top: 40px;
 	font-size: 1.5em;
 	background-color: rgba(244, 244, 244, 0.5);
+	color: #ffffff;
 }
 .welcome {
 	float: right;
@@ -39,7 +58,6 @@ body {
 }
 #logo {
 	margin-left: 10px;
-	/*border: 2px solid black;*/
 	width: 25%;
 	padding-top: 7px;
 }
@@ -67,15 +85,7 @@ nav {
 	background-color: rgba(82, 85, 100, 0.7);
 	padding: 2px 6px;
 }
-
-a:link, a:visited { 
-	color: #96C0CE;
-	text-decoration: none;
-}
-a:hover {
-	color: #C25B56;
-}
-.user_login, .user_logout {
+.user_login, .user_logout, .staff {
 	list-style-type: none;
 	text-transform: uppercase;
 	font-size: 0.9em;
@@ -88,33 +98,42 @@ a:hover {
 	box-shadow: 0px 0px 10px #888888;
 	color: #ffffff;
 }
-.body {
-	/*background-color: #525564;*/
-}
-.container {
-	background-color: #525564;
-	margin-top: 22.5%;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
-.container_home {
-	background-color: #525564;
-	margin-top: 35%;
-	width: 100%;
-	height: 100%;
-	z-index: 0;
-}
+
+/*#footer*/
+
 .footer {
 	clear: both;
 	height: 100px;
 	background-color: #525564;
 }
+.favicon {
+	width: 40px;
+	margin-right: 6px;
+}
+#social_media {
+	width: 15%;
+	padding-left: 55px;
+	margin-left: 41%;
+	margin-top: 10px;
+}
+#copyright {
+	text-align: center;
+	font-weight: bold;
+	padding-top: 10px;
+	color: #96C0CE;
+	text-decoration: none;
+	list-style-type: none;
+}
+.staff {
+	padding-right: 20px;
+}
+
+/*subscribers#new*/
+
 .form {
 	text-align: right;
 	padding: 4px;
 }
-/*subscribers#new*/
 #join_today {
 	width: 40%;
 	float: left;
@@ -155,7 +174,16 @@ a:hover {
 	padding: 8px;
 }
 
-/*artiles index*/
+/*artiles index - topics index*/
+
+.main_image {
+	width: 100%;
+	opacity: 0.8;
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
 .topic-page-heading {
 	font-size: 40px;
 	text-align: center;
@@ -171,7 +199,6 @@ a:hover {
 	color: #ffffff;
 	background-color: rgba(82, 85, 100, 0.7);
 }
-
 .main_article {
 	background-color: #74828F;
 	float: left;
@@ -196,15 +223,14 @@ a:hover {
 }
 #article-0-title, #article-1-title, #article-2-title, #article-3-title, #article-4-title {
 	font-size: 1.75em;
-	/*float: right;*/
 	text-align: left;
-	/*background-color: #525564;*/
 	padding: 4px;
 	z-index: 1;
 	font-weight: bold;
 }
 
 /*topics feed articles#index*/
+
 .topics_feed {
 	background-color: rgba(194, 91, 86, 0.9);
 	width: 25%;
@@ -241,7 +267,6 @@ h3 {
 /*topics#show*/
 
 .topic-article {
-	/*font-style: italic;*/
 	width: 30%;
 	float: left;
 	height: 100%;
@@ -255,29 +280,23 @@ h3 {
 .topic-category, .topic-page-heading {
 	font-size: 2em;
 	text-align: center;
-	color: #96C0CE;
+	color: #525564;
 }
 .topic-articles-feed {
 	width: 50%;
 }
-.topic-article-main {
-	border: 2px solid pink;
-}
 .topics-photo {
 	width: 40%;
-	border: 4px solid green;
-}
-.topic-page-heading {
-	font-size: 2em;
-	text-align: center;
 }
 .topics_photo {
 	width: 100%;
 	border: 4px solid #ffffff;
 }
+
 /*articles#show*/
+
 #article-show-wrap {
-	/*border: 2px solid black;*/
+
 	padding: 10px;
 	height: 100%;
 }
@@ -290,7 +309,6 @@ h3 {
 	margin-top: 20px;
 	font-weight: bold;
 	font-size: 2em;
-	/*float: left;*/
 }
 #article-date {
 	font-size: 1em;
@@ -358,8 +376,22 @@ h3 {
 	font-size: 0.9em;
 }
 
+/*staff#index */
 
+table {
+	background-color: rgba(255, 255, 255, 0.9);
+	box-shadow: 0px 0px 10px #888888;
+}
 
+/*article#new*/
+
+#new_article {
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 20px 0px;
+	width: 50%;
+	margin-left: 28%;
+	margin-bottom: 20px;
+}
 
 
 
