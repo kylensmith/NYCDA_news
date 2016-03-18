@@ -1,7 +1,7 @@
 === README
 
 ==News website with content management system ==
-A live demo with seeded date can be found here: http://kns-news.herokuapp.com/ [link](http://kns-news.herokuapp.com/)
+A live demo with seeded date can be found here: http://kns-news.herokuapp.com/ 
 
 Writen in Ruby with a Postgres Database.  Chartkick was added for some analytics.
 
